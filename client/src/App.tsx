@@ -10,7 +10,7 @@ import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
 
 function Router() {
-  // Track page views when routes change
+
   useAnalytics();
   
   return (
