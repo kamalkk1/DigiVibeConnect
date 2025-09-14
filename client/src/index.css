@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(225, 27%, 98%);
+  --foreground: hsl(220, 23%, 11%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(220, 23%, 11%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(220, 23%, 11%);
+  --primary: hsl(249, 58%, 69%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(170, 64%, 39%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(220, 15%, 96%);
+  --muted-foreground: hsl(220, 8%, 46%);
+  --accent: hsl(4, 90%, 69%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(220, 13%, 91%);
+  --input: hsl(220, 13%, 91%);
+  --ring: hsl(249, 58%, 69%);
+  --radius: 0.75rem;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: ui-serif, Georgia;
+  --font-mono: ui-monospace, SFMono-Regular;
+  --local-accent: hsl(35, 100%, 50%);
+  --digivibe-primary: hsl(249, 58%, 69%);
+  --digivibe-secondary: hsl(170, 64%, 39%);
+  --digivibe-accent: hsl(4, 90%, 69%);
+  --digivibe-local: hsl(35, 100%, 50%);
+}
+
+.dark {
+  --background: hsl(220, 23%, 11%);
+  --foreground: hsl(225, 27%, 98%);
+  --card: hsl(228, 9%, 10%);
+  --card-foreground: hsl(225, 27%, 98%);
+  --popover: hsl(228, 9%, 10%);
+  --popover-foreground: hsl(225, 27%, 98%);
+  --primary: hsl(249, 58%, 69%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(170, 64%, 39%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(220, 8%, 20%);
+  --muted-foreground: hsl(220, 15%, 70%);
+  --accent: hsl(4, 90%, 69%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(220, 13%, 20%);
+  --input: hsl(220, 13%, 20%);
+  --ring: hsl(249, 58%, 69%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .dark .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(249, 58%, 69%) 0%, hsl(170, 64%, 39%) 50%, hsl(4, 90%, 69%) 100%);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(249, 58%, 69%) 0%, hsl(170, 64%, 39%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .service-card {
+    transition: all 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
+}
