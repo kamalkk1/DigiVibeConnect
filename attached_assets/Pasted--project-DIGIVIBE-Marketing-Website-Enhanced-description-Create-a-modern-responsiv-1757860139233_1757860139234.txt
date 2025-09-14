@@ -1,0 +1,160 @@
+{
+  "project": "DIGIVIBE Marketing Website - Enhanced",
+  "description": "Create a modern, responsive website for DIGIVIBE—a North India digital marketing agency focused on creativity, technology, and measurable growth. Optimized for SEO, regional targeting, and lead generation.",
+  "tech_stack": {
+    "frontend": "React 18 + Tailwind CSS + Framer Motion",
+    "hosting": "Vercel/Netlify with CDN optimization",
+    "form_handling": "Formspree or custom API with Google Sheets integration",
+    "analytics": "Google Analytics 4 + Google Search Console",
+    "seo_tools": "React Helmet or Next.js Head for meta management"
+  },
+  "local_seo_optimization": {
+    "target_regions": ["Mohali", "Chandigarh", "Panchkula", "Zirakpur", "Tricity", "Punjab"],
+    "primary_keywords": [
+      "digital marketing agency Mohali",
+      "SEO services Chandigarh",
+      "creative agency Tricity",
+      "lead generation Mohali",
+      "social media marketing Punjab"
+    ],
+    "business_info": {
+      "name": "DIGIVIBE Digital Marketing Agency",
+      "address": "Mohali, Punjab, India",
+      "phone": "+91-XXXX-XXXXXX",
+      "service_areas": "Mohali, Chandigarh, Panchkula, Zirakpur, and surrounding areas"
+    }
+  },
+  "pages": [
+    {
+      "name": "Home",
+      "meta_seo": {
+        "title": "DIGIVIBE - Best Digital Marketing Agency in Mohali & Tricity | Creative Growth Solutions",
+        "description": "DIGIVIBE is a leading digital marketing agency in Mohali offering SEO, social media, web design & lead generation services. Serving Chandigarh, Panchkula, Zirakpur, and Punjab with creative solutions.",
+        "keywords": "digital marketing Mohali, SEO Chandigarh, creative agency Tricity, lead generation Punjab"
+      },
+      "sections": [
+        {
+          "type": "hero",
+          "headline": "DIGIVIBE – North India’s Premier Digital Growth Partner",
+          "subheadline": "Helping Mohali, Chandigarh & Tricity businesses grow with SEO, social media, and performance-driven digital strategies.",
+          "location_cta": "Serving Mohali • Chandigarh • Panchkula • Zirakpur",
+          "background": "Gradient or animated illustration featuring Tricity landmarks",
+          "cta_buttons": [
+            { "text": "Get Free Digital Audit", "link": "#contact", "tracking": "hero_audit_cta" },
+            { "text": "See Our Client Success Stories", "link": "#case-studies", "tracking": "hero_cases_cta" }
+          ],
+          "trust_indicators": [
+            "50+ North India Businesses Served",
+            "Google Partner Certified",
+            "5-Star Rated Agency"
+          ]
+        },
+        {
+          "type": "about",
+          "headline": "Mohali’s Most Creative Digital Marketing Agency",
+          "content": "DIGIVIBE combines strategy, creativity, and technology to help North India businesses achieve measurable growth online.",
+          "local_focus": "Proudly serving Mohali, Chandigarh, Panchkula, Zirakpur, and the entire Tricity region with customized strategies.",
+          "image": "Team photo or Mohali landmark background"
+        },
+        {
+          "type": "services",
+          "headline": "Full-Suite Digital Marketing Solutions for Tricity Businesses",
+          "services_grid": [
+            { "icon": "🏢", "title": "Local SEO", "description": "Dominate Mohali, Chandigarh & Panchkula search rankings with GMB optimization & citations.", "keywords": ["local SEO Mohali", "Google My Business Chandigarh"] },
+            { "icon": "🌐", "title": "Web Design & Development", "description": "Mobile-first, SEO-optimized websites that convert visitors into customers.", "keywords": ["web design Mohali", "website development Chandigarh"] },
+            { "icon": "📱", "title": "Social Media Marketing", "description": "Content creation, Instagram reels, and campaigns designed for North India audiences.", "keywords": ["social media marketing Mohali", "content creation Tricity"] },
+            { "icon": "📈", "title": "PPC & Performance Ads", "description": "Google Ads & Facebook campaigns focused on ROI & lead generation.", "keywords": ["PPC Mohali", "Google Ads Chandigarh"] },
+            { "icon": "🎯", "title": "Lead Generation Systems", "description": "End-to-end funnels, CRM integration, and automation for scalable growth.", "keywords": ["lead generation Mohali", "marketing automation Tricity"] },
+            { "icon": "📊", "title": "Analytics & Growth Consulting", "description": "Data-driven insights, competitor analysis & consulting for long-term impact.", "keywords": ["digital consultant Mohali", "growth strategy Chandigarh"] }
+          ]
+        },
+        {
+          "type": "case-studies",
+          "headline": "Success Stories Across North India",
+          "local_testimonials": [
+            { "company": "Restaurant Chain in Chandigarh", "result": "300% increase in online orders in 3 months", "services": "Local SEO + Social Media" },
+            { "company": "Tech Startup in Mohali", "result": "150+ qualified leads in first quarter", "services": "PPC + Landing Page Optimization" },
+            { "company": "Real Estate Agency in Panchkula", "result": "#1 rankings for property keywords", "services": "SEO + Content Marketing" }
+          ]
+        },
+        {
+          "type": "contact-form-enhanced",
+          "headline": "Ready to Grow Your Business in Mohali & Tricity?",
+          "description": "Request a free strategy consultation. Includes competitive analysis tailored to your region.",
+          "fields": [
+            { "name": "name", "type": "text", "placeholder": "Your Name", "required": true },
+            { "name": "email", "type": "email", "placeholder": "Email Address", "required": true },
+            { "name": "phone", "type": "tel", "placeholder": "WhatsApp Number", "required": true },
+            { "name": "company", "type": "text", "placeholder": "Business Name", "required": false },
+            { "name": "location", "type": "select", "options": ["Mohali", "Chandigarh", "Panchkula", "Zirakpur", "Other"], "required": true },
+            { "name": "services", "type": "checkbox-group", "label": "Services Needed", "options": ["SEO", "Social Media", "Website", "PPC Ads", "Content Creation", "Full Package"], "required": true },
+            { "name": "budget", "type": "select", "options": ["₹10K-25K", "₹25K-50K", "₹50K-1L", "₹1L+"], "required": false },
+            { "name": "message", "type": "textarea", "placeholder": "Tell us about your business goals...", "required": false }
+          ]
+        },
+        {
+          "type": "local-seo-footer",
+          "business_schema": {
+            "type": "LocalBusiness",
+            "name": "DIGIVIBE Digital Marketing Agency",
+            "address": "Mohali, Punjab, India",
+            "telephone": "+91-XXXX-XXXXXX",
+            "url": "https://digivibe.in",
+            "description": "Digital marketing agency in Mohali specializing in SEO, social media & lead generation for North India businesses."
+          },
+          "location_pages": [
+            { "text": "Digital Marketing Mohali", "href": "/mohali-digital-marketing" },
+            { "text": "SEO Services Chandigarh", "href": "/chandigarh-seo-services" },
+            { "text": "Social Media Marketing Panchkula", "href": "/panchkula-social-media" }
+          ]
+        }
+      ]
+    }
+  ],
+  "design_trends": {
+    "color_palette": { "primary": "#6C63FF", "secondary": "#00C9A7", "accent": "#FF6B6B", "background": "#F8FAFF", "text": "#1A1D29", "local_accent": "#FF8F00" },
+    "typography": { "headline_font": "Poppins, sans-serif", "body_font": "Inter, sans-serif", "brand_font": "Montserrat, sans-serif" },
+    "modern_elements": { "micro_animations": true, "interactive_cursors": true, "glass_morphism": true, "gradient_backgrounds": true, "dark_mode_toggle": true },
+    "mobile_first": true,
+    "performance_optimization": { "lazy_loading": true, "image_optimization": true, "code_splitting": true, "caching_strategy": "aggressive" }
+  },
+  "functionality_enhanced": {
+    "responsive": true,
+    "pwa_ready": true,
+    "contact_popup": true,
+    "live_chat": true,
+    "booking_calendar": true,
+    "testimonials_carousel": true,
+    "blog_integration": true,
+    "social_proof_notifications": true
+  },
+  "seo_technical": {
+    "structured_data": ["LocalBusiness", "Organization", "Service"],
+    "meta_optimization": "dynamic",
+    "sitemap_generation": true,
+    "robots_txt": true,
+    "canonical_urls": true,
+    "open_graph": true,
+    "twitter_cards": true,
+    "page_speed_optimization": true,
+    "core_web_vitals": "optimized"
+  },
+  "lead_generation_optimization": {
+    "exit_intent_popup": true,
+    "scroll_triggered_offers": true,
+    "social_proof_widgets": true,
+    "urgency_elements": true,
+    "progressive_profiling": true,
+    "lead_scoring": "basic",
+    "conversion_tracking": "enhanced"
+  },
+  "integrations": {
+    "google_analytics": "GA4",
+    "google_search_console": true,
+    "google_my_business": true,
+    "facebook_pixel": true,
+    "whatsapp_business": true,
+    "email_marketing": true,
+    "crm_systems": ["HubSpot", "Pipedrive", "Zoho"]
+  }
+}
