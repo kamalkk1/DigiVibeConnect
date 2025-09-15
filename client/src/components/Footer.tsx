@@ -101,7 +101,7 @@ export default function Footer() {
         <div className="border-t border-background/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-background/60 mb-4 md:mb-0" data-testid="text-footer-copyright">
-              © 2024 DIGIVIBE Digital Marketing Agency. All rights reserved.
+              © 2025 DIGIVIBE Digital Marketing Agency. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a href="/privacy" className="text-background/60 hover:text-background transition-colors duration-200" data-testid="link-privacy">

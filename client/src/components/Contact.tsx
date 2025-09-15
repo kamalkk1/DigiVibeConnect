@@ -334,7 +334,7 @@ export default function Contact() {
                 <Phone className="w-6 h-6" />
               </div>
               <h3 className="font-semibold mb-2" data-testid="text-contact-call">Call Us</h3>
-              <p className="text-muted-foreground" data-testid="text-contact-phone">+91-XXXX-XXXXXX</p>
+              <p className="text-muted-foreground" data-testid="text-contact-phone">+91-9780267246</p>
             </div>
             
             <div className="glass rounded-2xl p-6 text-center">
