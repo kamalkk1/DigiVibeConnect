@@ -14,19 +14,9 @@ export default function Hero() {
   return (
     <section className="relative pt-24 pb-20 overflow-hidden">
       {/* 🔹 Animated Prism Background */}
-      <div className="absolute inset-0">
-        <Prism
-          animationType="rotate"
-          timeScale={0.5}
-          height={3.5}
-          baseWidth={5.5}
-          scale={3.6}
-          hueShift={0}
-          colorFrequency={1}
-          noise={0}
-          glow={1}
-        />
-      </div>
+      <div className="absolute inset-0 gradient-bg opacity-10"></div>
+      <div className="absolute top-20 right-10 w-32 h-32 bg-primary opacity-20 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="absolute bottom-20 left-10 w-40 h-40 bg-secondary opacity-20 rounded-full blur-3xl animate-pulse-slow"></div>
 
       {/* 🔹 Hero Content */}
       <div className="relative container mx-auto px-6">
