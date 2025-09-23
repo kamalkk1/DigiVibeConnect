@@ -9,7 +9,7 @@ export default function Header() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="font-montserrat font-bold text-2xl gradient-text">
-            DIGIVIBE
+            DiGiVIBE
           </div>
           
           <nav className="hidden md:flex space-x-8">
