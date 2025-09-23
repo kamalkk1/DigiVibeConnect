@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-2">
             <div className="font-montserrat font-bold text-3xl mb-6">
-              <span className="text-primary" data-testid="text-footer-brand-digi">DIGI</span>
+              <span className="text-white" data-testid="text-footer-brand-digi">DIGI</span>
               <span className="text-secondary" data-testid="text-footer-brand-vibe">VIBE</span>
             </div>
             <p className="text-background/80 mb-6 leading-relaxed" data-testid="text-footer-description">
@@ -15,14 +15,14 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="#" 
+                href="https://www.facebook.com/profile.php?id=61581429111500&ref=pl_edit_xav_ig_profile_page_web#" 
                 className="w-10 h-10 bg-primary text-primary-foreground rounded-xl flex items-center justify-center hover:opacity-80 transition-opacity duration-200"
                 data-testid="link-facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/digi___vibe/" 
                 className="w-10 h-10 bg-primary text-primary-foreground rounded-xl flex items-center justify-center hover:opacity-80 transition-opacity duration-200"
                 data-testid="link-instagram"
               >
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="font-semibold text-lg mb-6 text-primary" data-testid="text-footer-location-services">Location Services</h3>
+            <h3 className="font-semibold text-lg mb-6 text-secondary" data-testid="text-footer-location-services">Location Services</h3>
             <ul className="space-y-3">
               <li>
                 <a href="/mohali-digital-marketing" className="text-background/80 hover:text-primary transition-colors duration-200" data-testid="link-mohali-digital-marketing">

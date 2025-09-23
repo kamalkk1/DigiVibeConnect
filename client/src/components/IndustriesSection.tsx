@@ -1,6 +1,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Briefcase, HeartPulse, Dumbbell, Utensils, Home, Users, GraduationCap, Music } from "lucide-react";
+import {
+  Briefcase,
+  HeartPulse,
+  Dumbbell,
+  Utensils,
+  Home,
+  Users,
+  GraduationCap,
+  Music,
+} from "lucide-react";
 import retail1 from "../../../attached_assets/retail-1.jpg";
 import retail2 from "../../../attached_assets/retail-2.jpg";
 import health1 from "../../../attached_assets/healthCare-1.jpg";
@@ -108,9 +117,21 @@ export default function IndustriesSection() {
 
   return (
     <section className="py-20 bg-background">
+      <div className="container mx-auto px-6">
+        {" "}
+        <p className="text-primary font-semibold mb-2">— We Work In</p>
+        {/* Main Heading */}
+        <h2 className="text-3xl md:text-4xl font-bold mb-8">
+          Our Industry Wise Solution
+        </h2>
+      </div>
+
       <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* Left Sidebar */}
+
         <div className="space-y-3">
+          {/* Subheading */}
+
           {industries.map((industry) => (
             <button
               key={industry.id}
@@ -147,11 +168,11 @@ export default function IndustriesSection() {
               </p>
 
               {/* Features */}
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 ">
                 {activeIndustry.features.map((feat) => (
                   <span
                     key={feat}
-                    className="px-4 py-2 bg-muted rounded-full text-sm"
+                    className="bg-gradient-to-br from-primary to-secondary px-4 py-2 rounded-full text-sm text-white"
                   >
                     {feat}
                   </span>

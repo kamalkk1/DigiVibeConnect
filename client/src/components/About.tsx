@@ -1,5 +1,6 @@
 import { MapPinned, Clock, DollarSign, Headphones } from "lucide-react";
 import FlowingMenu from "./FlowingMenu";
+import creative from "../../../attached_assets/creative.svg"
 export default function About() {
   const demoItems = [
     {
@@ -24,8 +25,8 @@ export default function About() {
     },
   ];
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="bg-black py-12 pb-10" style={{ height: "600px", position: "relative" }}>
+    <section id="about" className="py-20 ">
+      <div className="bg-gradient-to-br from-primary to-secondary py-12 pb-10" style={{ height: "600px", position: "relative" }}>
         <FlowingMenu items={demoItems} />
       </div>
       <div className="container mx-auto px-6 py-16">
@@ -78,7 +79,7 @@ export default function About() {
                   className="font-bold text-2xl text-primary"
                   data-testid="stat-years"
                 >
-                  5+ Years
+                  10+ Years
                 </div>
                 <div
                   className="text-sm text-muted-foreground"
@@ -118,11 +119,11 @@ export default function About() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative  rounded-3xl">
             <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+              src={creative}
               alt="Modern office building representing DIGIVIBE's presence in Mohali"
-              className="rounded-3xl shadow-2xl w-full animate-float"
+              className="rounded-3xl shadow-2xl w-full animate-float bg-gradient-to-br from-primary to-secondary"
               data-testid="img-office"
             />
 

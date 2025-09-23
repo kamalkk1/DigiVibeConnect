@@ -8,7 +8,8 @@ export default function Contact() {
 
   useEffect(() => {
     // Next.js and Vite React apps usually mount into "__next" or "root"
-    const el = document.getElementById("__next") || document.getElementById("root");
+    const el =
+      document.getElementById("__next") || document.getElementById("root");
     setRootEl(el);
   }, []);
 
@@ -22,9 +23,14 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-poppins font-bold text-4xl md:text-5xl mb-6">
-              <span data-testid="text-contact-title">Ready to Grow Your Business</span>
+              <span data-testid="text-contact-title">
+                Ready to Grow Your Business
+              </span>
               <br />
-              <span className="gradient-text" data-testid="text-contact-subtitle">
+              <span
+                className="gradient-text"
+                data-testid="text-contact-subtitle"
+              >
                 in Mohali & Tricity?
               </span>
             </h2>
@@ -32,35 +38,35 @@ export default function Contact() {
               className="text-xl text-muted-foreground"
               data-testid="text-contact-description"
             >
-              Schedule your free strategy consultation. Includes competitive analysis
-              tailored to your region.
+              Schedule your free strategy consultation. Includes competitive
+              analysis tailored to your region.
             </p>
           </div>
 
           <div className="bg-card rounded-3xl p-8 md:p-12 border border-border shadow-2xl text-center">
             {rootEl && (
               <div
-  onClick={() => {
-    trackEvent("calendly_open", "contact", "attempt");
-  }}
->
-  <PopupButton
-    url="https://calendly.com/kamalk2620/30min"
-    rootElement={rootEl}
-    text="Schedule Your Free Strategy Session"
-    className="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 px-8 rounded-xl font-semibold text-lg hover:opacity-90 transition-all duration-200 transform hover:scale-105"
-    prefill={{
-      customAnswers: { a1: "From Website Contact" },
-    }}
-    pageSettings={{
-      backgroundColor: "ffffff",
-      hideEventTypeDetails: false,
-      hideLandingPageDetails: false,
-      primaryColor: "00a2ff",
-      textColor: "4d5055",
-    }}
-  />
-</div>
+                onClick={() => {
+                  trackEvent("calendly_open", "contact", "attempt");
+                }}
+              >
+                <PopupButton
+                  url="https://calendly.com/kamalk2620/30min"
+                  rootElement={rootEl}
+                  text="Schedule Your Free Strategy Session"
+                  className="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 px-8 rounded-xl font-semibold text-lg hover:opacity-90 transition-all duration-200 transform hover:scale-105"
+                  prefill={{
+                    customAnswers: { a1: "From Website Contact" },
+                  }}
+                  pageSettings={{
+                    backgroundColor: "ffffff",
+                    hideEventTypeDetails: false,
+                    hideLandingPageDetails: false,
+                    primaryColor: "00a2ff",
+                    textColor: "4d5055",
+                  }}
+                />
+              </div>
             )}
 
             <p
@@ -77,11 +83,17 @@ export default function Contact() {
               <div className="w-12 h-12 bg-primary text-primary-foreground rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-6 h-6" />
               </div>
-              <h3 className="font-semibold mb-2" data-testid="text-contact-call">
+              <h3
+                className="font-semibold mb-2"
+                data-testid="text-contact-call"
+              >
                 Call Us
               </h3>
-              <p className="text-muted-foreground" data-testid="text-contact-phone">
-                +91-9780267246
+              <p
+                className="text-muted-foreground "
+                data-testid="text-contact-phone"
+              >
+                +91 98882 47787<br/>{""} +91 94639 00803
               </p>
             </div>
 
@@ -89,7 +101,10 @@ export default function Contact() {
               <div className="w-12 h-12 bg-secondary text-secondary-foreground rounded-xl flex items-center justify-center mx-auto mb-4">
                 <MessageCircle className="w-6 h-6" />
               </div>
-              <h3 className="font-semibold mb-2" data-testid="text-contact-whatsapp">
+              <h3
+                className="font-semibold mb-2"
+                data-testid="text-contact-whatsapp"
+              >
                 WhatsApp
               </h3>
               <p
@@ -104,14 +119,18 @@ export default function Contact() {
               <div className="w-12 h-12 bg-accent text-accent-foreground rounded-xl flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-6 h-6" />
               </div>
-              <h3 className="font-semibold mb-2" data-testid="text-contact-visit">
+              <h3
+                className="font-semibold mb-2"
+                data-testid="text-contact-visit"
+              >
                 Visit Us
               </h3>
               <p
                 className="text-muted-foreground"
                 data-testid="text-contact-address"
               >
-                Mohali, Punjab
+                2nd floor, sco 275, Sector 118, Sahibzada Ajit Singh Nagar,Mohali
+                Punjab
               </p>
             </div>
           </div>

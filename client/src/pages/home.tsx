@@ -7,6 +7,7 @@ import CaseStudies from "@/components/CaseStudies";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import IndustriesSection from "@/components/IndustriesSection";
+import TestimonialSlider from "@/components/TestimonialSlider";
 export default function Home() {
   useEffect(() => {
     // Smooth scrolling for anchor links
@@ -35,6 +36,7 @@ export default function Home() {
       <Hero />
       <About />
       <IndustriesSection/>
+      <TestimonialSlider/>
       <Services />
       <CaseStudies />
       <Contact />

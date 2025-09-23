@@ -47,14 +47,14 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-20">
-      <div className="container mx-auto px-6">
+    <section id="services" className="py-20 bg-gradient-to-br from-primary to-secondary">
+      <div className="container mx-auto px-6 ">
         <div className="text-center mb-16">
-          <h2 className="font-poppins font-bold text-4xl md:text-5xl mb-6">
-            <span data-testid="text-services-title">Full-Suite Digital Marketing</span><br/>
-            <span className="gradient-text" data-testid="text-services-subtitle">Solutions for Tricity Businesses</span>
+          <h2 className="font-poppins font-bold text-4xl md:text-5xl mb-6 ">
+            <span data-testid="text-services-title" className="text-white">Full-Suite Digital Marketing</span><br/>
+            <span className="text-white " data-testid="text-services-subtitle">Solutions for Tricity Businesses</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="text-services-description">
+          <p className="text-xl text-foreground max-w-3xl mx-auto" data-testid="text-services-description">
             From local SEO domination to performance advertising, we offer comprehensive digital solutions tailored for North India's competitive market.
           </p>
         </div>
@@ -70,7 +70,7 @@ export default function Services() {
                 <h3 className="font-poppins font-semibold text-xl mb-4" data-testid={`text-service-title-${index}`}>
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground mb-6" data-testid={`text-service-description-${index}`}>
+                <p className="text-white mb-6" data-testid={`text-service-description-${index}`}>
                   {service.description}
                 </p>
                 <div className="flex flex-wrap gap-2 justify-center">
