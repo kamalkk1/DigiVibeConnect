@@ -76,7 +76,14 @@ export default {
         inter: ['Inter', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
       },
+      translate: {
+        '101': '101%',
+      },
       keyframes: {
+         marquee: {
+          'from': { transform: 'translateX(0%)' },
+          'to': { transform: 'translateX(-50%)' }
+        },
         "accordion-down": {
           from: {
             height: "0",
@@ -99,6 +106,7 @@ export default {
         }
       },
       animation: {
+         marquee: 'marquee 15s linear infinite',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         float: "float 6s ease-in-out infinite",

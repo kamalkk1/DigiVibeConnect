@@ -5,24 +5,24 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full z-50 glass">
-      <div className="container mx-auto px-6 py-4">
+    <header className="fixed top-0 w-full z-50  bg-gradient-to-br from-primary to-secondary">
+      <div className="container mx-auto px-6 py-4 ">
         <div className="flex items-center justify-between">
-          <div className="font-montserrat font-bold text-2xl gradient-text">
-            DiGiVIBE
+          <div className="font-montserrat font-bold text-2xl  text-secondary">
+            <span className="text-white">DiGi</span>VIBE
           </div>
           
           <nav className="hidden md:flex space-x-8">
-            <a href="#services" className="text-foreground hover:text-primary transition-colors duration-200" data-testid="nav-services">
+            <a href="#services" className="text-white hover:text-primary transition-colors duration-200" data-testid="nav-services">
               Services
             </a>
-            <a href="#case-studies" className="text-foreground hover:text-primary transition-colors duration-200" data-testid="nav-case-studies">
+            <a href="#case-studies" className="text-white hover:text-primary transition-colors duration-200" data-testid="nav-case-studies">
               Case Studies
             </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors duration-200" data-testid="nav-about">
+            <a href="#about" className="text-white hover:text-primary transition-colors duration-200" data-testid="nav-about">
               About
             </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors duration-200" data-testid="nav-contact">
+            <a href="#contact" className="text-white hover:text-primary transition-colors duration-200" data-testid="nav-contact">
               Contact
             </a>
           </nav>
@@ -46,7 +46,7 @@ export default function Header() {
         
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border glass rounded-lg mt-2">
+          <div className="md:hidden  pb-4 border-t border-border mt-2">
             <nav className="flex flex-col space-y-4 pt-4">
               <a href="#services" className="text-foreground hover:text-primary transition-colors duration-200" data-testid="mobile-nav-services">
                 Services
