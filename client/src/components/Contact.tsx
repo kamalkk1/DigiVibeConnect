@@ -93,27 +93,36 @@ export default function Contact() {
                 className="text-muted-foreground "
                 data-testid="text-contact-phone"
               >
-                +91 98882 47787<br/>{""} +91 94639 00803
+                +91 98882 47787
+                <br />
+                {""} +91 94639 00803
               </p>
             </div>
 
-            <div className="glass rounded-2xl p-6 text-center">
+            <a
+              href="https://wa.me/919888247787?text=Hello%20I%20want%20to%20know%20more!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-200"
+            >
               <div className="w-12 h-12 bg-secondary text-secondary-foreground rounded-xl flex items-center justify-center mx-auto mb-4">
                 <MessageCircle className="w-6 h-6" />
               </div>
+
               <h3
                 className="font-semibold mb-2"
                 data-testid="text-contact-whatsapp"
               >
                 WhatsApp
               </h3>
+
               <p
                 className="text-muted-foreground"
                 data-testid="text-contact-whatsapp-desc"
               >
                 Quick Response Guaranteed
               </p>
-            </div>
+            </a>
 
             <div className="glass rounded-2xl p-6 text-center">
               <div className="w-12 h-12 bg-accent text-accent-foreground rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -129,8 +138,8 @@ export default function Contact() {
                 className="text-muted-foreground"
                 data-testid="text-contact-address"
               >
-                2nd floor, sco 275, Sector 118, Sahibzada Ajit Singh Nagar,Mohali
-                Punjab
+                2nd floor, sco 275, Sector 118, Sahibzada Ajit Singh
+                Nagar,Mohali Punjab
               </p>
             </div>
           </div>

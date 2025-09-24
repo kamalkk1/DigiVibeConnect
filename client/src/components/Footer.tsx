@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import LOGO from "../../../attached_assets/DV Logo White 02.png"
 
 export default function Footer() {
   return (
@@ -7,8 +8,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-2">
             <div className="font-montserrat font-bold text-3xl mb-6">
-              <span className="text-white" data-testid="text-footer-brand-digi">DiGi</span>
-              <span className="text-secondary" data-testid="text-footer-brand-vibe">VIBE</span>
+                <img src={LOGO} alt="DigiVibe Logo" className="w-36 h-36" />
+              {/* <span className="text-white" data-testid="text-footer-brand-digi">DiGi</span>
+              <span className="text-secondary" data-testid="text-footer-brand-vibe">VIBE</span> */}
             </div>
             <p className="text-background/80 mb-6 leading-relaxed" data-testid="text-footer-description">
               North India's premier digital marketing agency helping businesses in Mohali, Chandigarh, Panchkula, and Zirakpur achieve measurable online growth.

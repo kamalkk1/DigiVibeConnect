@@ -1,5 +1,5 @@
 import { trackEvent } from "@/lib/analytics";
-import DigitalMArketing from "../../../attached_assets/digivibe.svg";
+import DigitalMArketing from "../../../attached_assets/Sequence.gif";
 import { ChartLine, Trophy } from "lucide-react";
 import Aurora from "./Aurora";
 
@@ -75,7 +75,7 @@ export default function Hero() {
             <img
               src={DigitalMArketing}
               alt="Hero Visual"
-              className="w-full max-w-md lg:max-w-lg rounded-xl shadow-lg"
+              className="w-full max-w-md lg:max-w-lg rounded-xl shadow-xl"
             />
           </div>
         </div>

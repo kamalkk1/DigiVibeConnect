@@ -2,31 +2,41 @@ import { MapPinned, Clock, DollarSign, Headphones } from "lucide-react";
 import FlowingMenu from "./FlowingMenu";
 import creative from "../../../attached_assets/creative.svg"
 export default function About() {
-  const demoItems = [
-    {
-      link: "#",
-      text: "SOCIAL MEDIA MARKETING",
-      image: "https://picsum.photos/600/400?random=1",
-    },
-    {
-      link: "#",
-      text: "GOOGLE & FACEBOOK ADS",
-      image: "https://picsum.photos/600/400?random=2",
-    },
-    {
-      link: "#",
-      text: "SEARCH ENGINE OPTIMIZATION",
-      image: "https://picsum.photos/600/400?random=3",
-    },
-    {
-      link: "#",
-      text: "WEB DESIGN & DEVELOPMENT",
-      image: "https://picsum.photos/600/400?random=4",
-    },
-  ];
+const demoItems = [
+  {
+    link: "#",
+    heading: "Struggling to Stand Out on Social?",
+    text: "SOCIAL MEDIA MARKETING",
+    description: "Many businesses struggle with low engagement and poor brand visibility. At Digivibe, we create scroll-stopping content strategies that build communities and drive conversions.",
+    image: "https://picsum.photos/600/400?random=11",
+  },
+  {
+    link: "#",
+    heading: "Wasting Ad Spend?",
+    text: "GOOGLE & FACEBOOK ADS",
+    description: "Poorly optimized campaigns often drain budgets with little ROI. We help scale businesses with data-driven ad strategies that maximize reach and lower cost per acquisition.",
+    image: "https://picsum.photos/600/400?random=12",
+  },
+  {
+    link: "#",
+    heading: "Not Ranking on Google?",
+    text: "SEARCH ENGINE OPTIMIZATION",
+    description: "Most businesses get lost in search results, losing valuable traffic. Digivibe boosts your visibility with SEO strategies that drive sustainable, organic growth.",
+    image: "https://picsum.photos/600/400?random=13",
+  },
+  {
+    link: "#",
+    heading: "Website Not Converting?",
+    text: "WEB DESIGN & DEVELOPMENT",
+    description: "Clunky, outdated websites often push leads away. We design high-performing, user-friendly websites that turn visitors into loyal customers.",
+    image: "https://picsum.photos/600/400?random=14",
+  },
+];
+
   return (
     <section id="about" className="py-20 ">
-      <div className="bg-gradient-to-br from-primary to-secondary py-12 pb-10" style={{ height: "600px", position: "relative" }}>
+      <div className="bg-gradient-to-br from-primary to-secondary py-0 pb-10" style={{ height: "600px", position: "relative" }}>
+        <div className="text-white flex items-center justify-center border-b-white border-b-[1px] animate-blink">Hover or Click to reveal</div>
         <FlowingMenu items={demoItems} />
       </div>
       <div className="container mx-auto px-6 py-16">

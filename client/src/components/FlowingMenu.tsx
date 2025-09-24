@@ -3,7 +3,9 @@ import { gsap } from 'gsap';
 
 interface MenuItemProps {
   link: string;
+  heading: string;
   text: string;
+  description: string;
   image: string;
 }
 
@@ -23,7 +25,7 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
   );
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ link, text,description,heading, image }) => {
   const itemRef = React.useRef<HTMLDivElement>(null);
   const marqueeRef = React.useRef<HTMLDivElement>(null);
   const marqueeInnerRef = React.useRef<HTMLDivElement>(null);
@@ -58,40 +60,62 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
     });
   };
 
-  const repeatedMarqueeContent = React.useMemo(() => {
-    return Array.from({ length: 4 }).map((_, idx) => (
-      <React.Fragment key={idx}>
-        <span className="text-[#060010] uppercase font-normal text-[4vh] leading-[1.2] p-[1vh_1vw_0]">{text}</span>
-        <div
-          className="w-[200px] h-[7vh] my-[2em] mx-[2vw] p-[1em_0] rounded-[50px] bg-cover bg-center"
-          style={{ backgroundImage: `url(${image})` }}
-        />
-      </React.Fragment>
-    ));
-  }, [text, image]);
+const repeatedMarqueeContent = React.useMemo(() => {
+  return Array.from({ length: 1 }).map((_, idx) => (
+    <React.Fragment key={idx}>
+      <div className="flex items-center justify-center gap-4 p-8 min-w-[600px]">
+  {/* Content Section */}
+  <div className="flex flex-col justify-center items-center space-y-4 text-center">
+    <span className="text-[#060010] font-bold text-2xl font-poppins">
+      {heading}
+    </span>
+    <span className="text-primary/80 uppercase font-medium tracking-wider text-sm">
+      {text}
+    </span>
+   
+  </div>
 
-  return (
-    <div className="flex-1 relative overflow-hidden text-center shadow-[0_-1px_0_0_#fff]" ref={itemRef}>
-      <a
-        className="flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-semibold text-white text-[4vh] hover:text-[#060010] focus:text-white focus-visible:text-[#060010]"
-        href={link}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+  {/* Image Section */}
+  <div 
+    className="w-[240px] h-[160px] rounded-2xl bg-cover bg-center shadow-lg transform transition-transform hover:scale-105"
+    style={{ 
+      backgroundImage: `url(${image})`,
+      boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+    }}
+  />
+</div>
+<div> <p className="text-muted-foreground text-base leading-tight max-w-sm line-clamp-2 text-ellipsis">
+      {description}
+    </p></div>
+    </React.Fragment>
+  ));
+}, [heading, text, description, image]);
+
+   return (
+  <div className="flex-1 relative overflow-hidden text-center shadow-[0_-1px_0_0_#fff]" ref={itemRef}>
+    <a
+      className="flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-semibold text-white text-[2.5vh] sm:text-[4vh] hover:text-[#060010] focus:text-white focus-visible:text-[#060010]"
+      href={link}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {text}
+    </a>
+    <div
+      className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-white/95 backdrop-blur-sm translate-y-[101%]"
+      ref={marqueeRef}
+    >
+      <div 
+        className="h-full w-[200%] flex items-center justify-center" 
+        ref={marqueeInnerRef}
       >
-        {text}
-      </a>
-      <div
-        className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-white translate-y-[101%]"
-        ref={marqueeRef}
-      >
-        <div className="h-full w-[200%] flex" ref={marqueeInnerRef}>
-          <div className="flex items-center relative h-full w-[200%] will-change-transform animate-marquee">
-            {repeatedMarqueeContent}
-          </div>
+        <div className="flex items-center  h-full w-full will-change-transform animate-marquee">
+          {repeatedMarqueeContent}
         </div>
       </div>
     </div>
-  );
+  </div>
+   );
 };
 
 export default FlowingMenu;
