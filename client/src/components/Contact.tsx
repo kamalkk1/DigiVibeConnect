@@ -51,7 +51,7 @@ export default function Contact() {
                 }}
               >
                 <PopupButton
-                  url="https://calendly.com/kamalk2620/30min"
+                  url="https://calendly.com/kamalk2620/strategy-call"
                   rootElement={rootEl}
                   text="Schedule Your Free Strategy Session"
                   className="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 px-8 rounded-xl font-semibold text-lg hover:opacity-90 transition-all duration-200 transform hover:scale-105"

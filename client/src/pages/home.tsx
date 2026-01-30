@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import BotomateXSection from "@/components/BotomateXSection";
 import CaseStudies from "@/components/CaseStudies";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -38,6 +39,7 @@ export default function Home() {
       <IndustriesSection/>
       <TestimonialSlider/>
       <Services />
+      <BotomateXSection />
       <CaseStudies />
       <Contact />
       <Footer />
