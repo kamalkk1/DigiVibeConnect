@@ -10,6 +10,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import PageLayout from "@/components/layout/PageLayout";
 import { brandInfo } from "@/lib/siteData";
 
@@ -24,16 +25,43 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
+
+    console.log("Starting EmailJS submission...");
+    console.log("Service ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+    console.log("Template ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+    console.log("Public Key (first 5 chars):", import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.substring(0, 5) + "...");
     
-    // Simulate form submission
-    setTimeout(() => {
+    const templateParams = {
+      from_name: formState.name,
+      from_email: formState.email,
+      phone: formState.phone || "Not provided",
+      company: formState.company || "Not provided",
+      service: formState.service || "Not specified",
+      message: formState.message,
+    };
+    console.log("Template Params:", templateParams);
+
+    try {
+      const response = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      console.log("EmailJS submission successful! Response:", response);
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 1500);
+    } catch (err) {
+      console.error("EmailJS error encountered:", err);
+      setIsSubmitting(false);
+      setError("Failed to send message. Please try again or contact us directly.");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -70,7 +98,7 @@ export default function ContactPage() {
       title: "Visit Us",
       description: "Mohali, Punjab, India",
       value: "Get Directions",
-      href: "https://maps.google.com/?q=Mohali+Punjab+India"
+      href: "https://share.google/Z2vo6FqJHKy8PzOjW"
     }
   ];
 
@@ -237,6 +265,12 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {error && (
+                    <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 text-red-500 text-sm">
+                      {error}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -307,24 +341,29 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
-      <section className="py-0 bg-card">
-        <div className="h-96 bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
-          <div className="text-center">
-            <MapPin className="w-16 h-16 text-primary/30 mx-auto mb-4" />
-            <p className="text-muted-foreground">
-              Interactive map would be embedded here
-            </p>
-            <a
-              href="https://maps.google.com/?q=Mohali+Punjab+India"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary hover:underline mt-2"
-            >
-              Open in Google Maps
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
+      {/* Map Section */}
+      <section className="bg-card">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27624.083576851906!2d76.63395268363641!3d30.7420410303617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x82e2f977c6bf2653%3A0x2e9179656d4e3d14!2sDigivibe!5e0!3m2!1sen!2sin!4v1771319687872!5m2!1sen!2sin"
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="DigiVibe Office Location"
+          className="w-full"
+        />
+        <div className="text-center py-4">
+          <a
+            href="https://www.google.com/maps/place/Digivibe/@30.7420410,76.6339527,13z"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-primary hover:underline text-sm"
+          >
+            Open in Google Maps
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </section>
     </PageLayout>

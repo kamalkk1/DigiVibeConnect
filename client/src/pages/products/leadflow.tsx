@@ -122,13 +122,13 @@ export default function LeadFlowPage() {
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4">
                 <a
-                  href={product.externalUrl}
+                  href="https://wa.me/919780267246?text=Hi%2C%20I%27m%20interested%20in%20LeadFlow%20CRM.%20I%27d%20like%20to%20start%20a%20free%20trial."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-blue-500 text-white rounded-xl font-semibold hover:bg-blue-600 transition-all duration-200 shadow-lg shadow-blue-500/25"
                 >
                   Start Free Trial
-                  <ExternalLink className="w-5 h-5" />
+                  <MessageSquare className="w-5 h-5" />
                 </a>
                 <button className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white border border-white/20 rounded-xl font-semibold hover:bg-white/20 transition-all duration-200">
                   <Play className="w-5 h-5" />
@@ -282,13 +282,13 @@ export default function LeadFlowPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={product.externalUrl}
+              href="https://wa.me/919780267246?text=Hi%2C%20I%27m%20interested%20in%20LeadFlow%20CRM.%20I%27d%20like%20to%20start%20a%20free%20trial."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-white/90 transition-all duration-200 shadow-lg"
             >
               Start Free Trial
-              <ExternalLink className="w-5 h-5" />
+              <MessageSquare className="w-5 h-5" />
             </a>
             <Link href="/contact">
               <span className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white border border-white/30 rounded-xl font-semibold hover:bg-white/20 transition-all duration-200 cursor-pointer">

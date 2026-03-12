@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import { brandInfo, companyStats, products } from "@/lib/siteData";
+import { generateOrganizationSchema, generateWebPageSchema } from "@/lib/schema";
 
 export default function AboutPage() {
   const values = [
@@ -51,6 +52,14 @@ export default function AboutPage() {
     <PageLayout
       title="About DigiVibe - Digital Marketing Agency Mohali"
       description="Learn about DigiVibe, Mohali's premier digital marketing agency. 10+ years helping Tricity businesses grow with innovative digital solutions."
+      schema={[
+        generateOrganizationSchema(),
+        generateWebPageSchema(
+          "About DigiVibe - Digital Marketing Agency Mohali", 
+          "Learn about DigiVibe, Mohali's premier digital marketing agency. 10+ years helping Tricity businesses grow with innovative digital solutions.", 
+          "/about"
+        )
+      ]}
     >
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">

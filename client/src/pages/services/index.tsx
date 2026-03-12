@@ -2,12 +2,21 @@ import { Link } from "wouter";
 import { ArrowRight, Check, ChevronRight } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import { services, products } from "@/lib/siteData";
+import { generateOrganizationSchema, generateWebPageSchema } from "@/lib/schema";
 
 export default function ServicesHub() {
   return (
     <PageLayout
       title="Digital Marketing Services - DigiVibe Mohali"
       description="Full-suite digital marketing services in Mohali. SEO, PPC, Social Media, Web Design, Lead Generation & Analytics for Tricity businesses."
+      schema={[
+        generateOrganizationSchema(),
+        generateWebPageSchema(
+          "Digital Marketing Services - DigiVibe Mohali",
+          "Full-suite digital marketing services in Mohali. SEO, PPC, Social Media, Web Design, Lead Generation & Analytics for Tricity businesses.",
+          "/services"
+        )
+      ]}
     >
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">

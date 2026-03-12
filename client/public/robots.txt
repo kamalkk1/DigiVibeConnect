@@ -1,0 +1,37 @@
+# DigiVibe - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://digivibe.in/sitemap.xml
+
+# Disallow admin/api paths
+Disallow: /api/
+Disallow: /admin/
+
+# Allow all crawlers to access static assets
+User-agent: Googlebot
+Allow: /images/
+Allow: /assets/
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Explicitly Allow AI Search Bots (GEO Optimization)
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bingbot
+Allow: /

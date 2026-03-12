@@ -29,6 +29,7 @@ import ServiceDetail from "@/pages/services/ServiceDetail";
 
 // Case Studies
 import CaseStudiesHub from "@/pages/case-studies/index";
+import CaseStudyDetail from "@/pages/case-studies/CaseStudyDetail";
 
 // Blog
 import BlogHub from "@/pages/blog/index";
@@ -58,6 +59,7 @@ function Router() {
       
       {/* Case Studies */}
       <Route path="/case-studies" component={CaseStudiesHub} />
+      <Route path="/case-studies/:slug" component={CaseStudyDetail} />
       
       {/* Blog */}
       <Route path="/blog" component={BlogHub} />

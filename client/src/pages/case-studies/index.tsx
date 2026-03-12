@@ -7,7 +7,7 @@ import { caseStudies, services } from "@/lib/siteData";
 export default function CaseStudiesHub() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
 
-  const industries = ["all", ...new Set(caseStudies.map(cs => cs.industry))];
+  const industries = ["all", ...Array.from(new Set(caseStudies.map(cs => cs.industry)))];
   
   const filteredStudies = activeFilter === "all" 
     ? caseStudies 

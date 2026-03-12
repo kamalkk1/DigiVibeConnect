@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Botomatex — Close More. Work Less.</title>
+  <meta name="description" content="Botomatex AI-Powered CRM helps small businesses close deals 10x faster, win back 10+ hours weekly, and earn more with less spend. Start free today." />
+  <meta name="keywords" content="AI CRM, lead management, small business automation, sales automation, Botomatex" />
+  <meta property="og:title" content="Botomatex — Close More. Work Less." />
+  <meta property="og:description" content="AI-Powered CRM that closes deals 10x faster for small businesses." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://botomatex.com" />
+  <link rel="canonical" href="https://botomatex.com" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Botomatex",
+    "applicationCategory": "BusinessApplication",
+    "description": "AI-Powered CRM for small businesses",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #0d0d0d;
+      --cream: #f5f0e8;
+      --gold: #e8a838;
+      --gold-light: #f5cb72;
+      --rust: #c44b2b;
+      --mist: #dde3e8;
+      --card-bg: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 6rem 8vw 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 90% 20%, rgba(232,168,56,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 10% 80%, rgba(196,75,43,0.1) 0%, transparent 60%);
+      z-index: 0;
+    }
+
+    .hero-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 1.4rem;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3.2rem, 8vw, 7.5rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--gold);
+      position: relative;
+    }
+
+    .hero-title em::after {
+      content: '';
+      position: absolute;
+      bottom: 0.05em;
+      left: 0; right: 0;
+      height: 0.06em;
+      background: var(--gold);
+      border-radius: 99px;
+    }
+
+    .hero-sub {
+      margin-top: 2rem;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 300;
+      max-width: 52ch;
+      line-height: 1.7;
+      color: #3a3530;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+
+    .hero-cta {
+      margin-top: 2.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 1rem 2.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.7s 0.3s ease both;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .hero-cta:hover { background: var(--rust); transform: translateY(-2px); }
+
+    .hero-stat {
+      position: absolute;
+      right: 8vw;
+      bottom: 8vh;
+      text-align: right;
+      z-index: 1;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(4rem, 10vw, 9rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--gold);
+    }
+
+    .hero-stat span {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #6b6358;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── BENEFITS SECTION ── */
+    .benefits {
+      padding: 6rem 8vw;
+    }
+
+    .section-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      max-width: 18ch;
+      margin-bottom: 4rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: 2px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 3rem 2.4rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover { transform: translateY(-4px); }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+
+    .card:hover::before { transform: scaleX(1); }
+
+    .card-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--mist);
+      margin-bottom: 1.4rem;
+      user-select: none;
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .card-body {
+      font-size: 0.97rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #4a4540;
+    }
+
+    .card-proof {
+      margin-top: 2rem;
+      padding: 1rem 1.2rem;
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #3a3530;
+      font-style: italic;
+    }
+
+    /* ── CLOSER STRIP ── */
+    .closer {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 5rem 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .closer-left {
+      flex: 1 1 36ch;
+    }
+
+    .closer-left h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .closer-left h2 span { color: var(--gold); }
+
+    .closer-left p {
+      font-weight: 300;
+      line-height: 1.7;
+      color: #b0a898;
+      max-width: 46ch;
+    }
+
+    .closer-cta {
+      flex-shrink: 0;
+    }
+
+    .closer-cta a {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      padding: 1.1rem 2.4rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .closer-cta a:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    /* ── FOOTER NOTE ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      color: #9a9188;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card:nth-child(1) { transition-delay: 0.05s; }
+    .card:nth-child(2) { transition-delay: 0.15s; }
+    .card:nth-child(3) { transition-delay: 0.25s; }
+
+    /* ── NAV BAR ── */
+    .site-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(245,240,232,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 0.8rem 8vw; display: flex; align-items: center; justify-content: space-between;
+    }
+    .site-nav .nav-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; text-decoration:none; color:var(--ink); }
+    .site-nav .nav-logo em { font-style:normal; color:var(--gold); }
+    .site-nav .nav-links { display:flex; gap:1.8rem; align-items:center; }
+    .site-nav .nav-links a { text-decoration:none; color:var(--ink); font-size:0.92rem; font-weight:500; transition:color .2s; }
+    .site-nav .nav-links a:hover, .site-nav .nav-links a.active { color:var(--rust); }
+    .nav-cta { background:var(--ink); color:var(--cream)!important; padding:0.55rem 1.4rem; border-radius:4px; font-weight:700!important; font-size:0.85rem!important; transition:background .2s; }
+    .nav-cta:hover { background:var(--rust); }
+
+    /* ── BLOG SECTION ── */
+    .blog-section { padding:5rem 8vw; background: var(--card-bg); }
+    .blog-filters { display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2.5rem; }
+    .blog-filters button { font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:500; padding:0.5rem 1.2rem; border:1px solid var(--mist); background:transparent; border-radius:99px; cursor:pointer; transition:all .2s; color:var(--ink); }
+    .blog-filters button:hover { border-color:var(--gold); }
+    .blog-filters button.active { background:var(--ink); color:var(--cream); border-color:var(--ink); }
+    .blog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr)); gap:2rem; }
+    .blog-card { background:var(--cream); border-radius:12px; overflow:hidden; transition:transform .3s, box-shadow .3s; cursor:pointer; text-decoration:none; color:var(--ink); display:block; }
+    .blog-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,0.08); }
+    .blog-card-img { height:200px; background:linear-gradient(135deg,rgba(232,168,56,0.15),rgba(196,75,43,0.1)); display:flex; align-items:center; justify-content:center; font-size:3rem; opacity:0.4; }
+    .blog-card-body { padding:1.6rem; }
+    .blog-card-meta { display:flex; align-items:center; gap:0.8rem; font-size:0.78rem; color:#9a9188; margin-bottom:0.6rem; }
+    .blog-card-cat { background:rgba(232,168,56,0.15); color:var(--rust); padding:0.2rem 0.6rem; border-radius:99px; font-weight:500; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em; }
+    .blog-card h3 { font-family:'Syne',sans-serif; font-size:1.25rem; font-weight:700; line-height:1.3; margin-bottom:0.6rem; }
+    .blog-card p { font-size:0.9rem; font-weight:300; color:#4a4540; line-height:1.6; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+    .blog-card-footer { padding:0 1.6rem 1.4rem; display:flex; align-items:center; justify-content:space-between; font-size:0.8rem; color:#9a9188; }
+
+    /* ── BLOG DETAIL ── */
+    .blog-detail { padding:4rem 8vw 5rem; max-width:820px; margin:0 auto; }
+    .blog-detail-back { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.88rem; color:var(--rust); text-decoration:none; font-weight:500; margin-bottom:2rem; transition:opacity .2s; }
+    .blog-detail-back:hover { opacity:0.7; }
+    .blog-detail-cat { display:inline-block; background:rgba(232,168,56,0.15); color:var(--rust); padding:0.3rem 0.8rem; border-radius:99px; font-weight:500; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1rem; }
+    .blog-detail h1 { font-family:'Syne',sans-serif; font-size:clamp(2rem,5vw,3.2rem); font-weight:800; line-height:1.1; margin-bottom:1rem; letter-spacing:-0.02em; }
+    .blog-detail .detail-meta { display:flex; flex-wrap:wrap; gap:1.2rem; font-size:0.85rem; color:#9a9188; margin-bottom:2.5rem; padding-bottom:1.5rem; border-bottom:1px solid var(--mist); }
+    .blog-detail-content { font-size:1.05rem; line-height:1.85; color:#3a3530; }
+    .blog-detail-content h2 { font-family:'Syne',sans-serif; font-size:1.6rem; font-weight:800; margin:2.5rem 0 1rem; padding-bottom:0.6rem; border-bottom:2px solid var(--mist); }
+    .blog-detail-content h3 { font-family:'Syne',sans-serif; font-size:1.25rem; font-weight:700; margin:2rem 0 0.8rem; }
+    .blog-detail-content p { margin-bottom:1.2rem; }
+    .blog-detail-content blockquote { border-left:3px solid var(--gold); background:rgba(232,168,56,0.06); padding:1rem 1.4rem; margin:1.5rem 0; border-radius:0 8px 8px 0; font-style:italic; }
+    .blog-detail-content ul, .blog-detail-content ol { margin:1rem 0; padding-left:1.5rem; }
+    .blog-detail-content li { margin-bottom:0.5rem; }
+    .blog-detail-content strong { color:var(--ink); }
+    .blog-detail-content table { width:100%; border-collapse:collapse; margin:1.5rem 0; }
+    .blog-detail-content th { background:rgba(232,168,56,0.1); padding:0.8rem; text-align:left; border:1px solid var(--mist); font-weight:700; font-family:'Syne',sans-serif; font-size:0.9rem; }
+    .blog-detail-content td { padding:0.8rem; border:1px solid var(--mist); font-size:0.92rem; }
+    .blog-detail-content hr { border:none; border-top:1px solid var(--mist); margin:2.5rem 0; }
+    .blog-detail-content code { background:rgba(232,168,56,0.1); padding:0.15rem 0.4rem; border-radius:4px; font-size:0.9em; }
+    .blog-detail-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--mist); }
+    .blog-detail-tags span { padding:0.3rem 0.8rem; border:1px solid var(--mist); border-radius:99px; font-size:0.78rem; color:#6b6358; }
+
+    .page-hidden { display:none !important; }
+
+    @media(max-width:768px) {
+      .site-nav { padding:0.7rem 5vw; }
+      .site-nav .nav-links { gap:1rem; }
+      .blog-section, .blog-detail { padding-left:5vw; padding-right:5vw; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav class="site-nav">
+  <a href="#" class="nav-logo" onclick="showPage('home');return false">Botomate<em>x</em></a>
+  <div class="nav-links">
+    <a href="#benefits" data-page="home">Benefits</a>
+    <a href="#" onclick="showPage('blog');return false" data-page="blog">Blog</a>
+    <a href="#" class="nav-cta">Start Free</a>
+  </div>
+</nav>
+
+<!-- ─── PAGES ─── -->
+<div id="page-home">
+
+<!-- ─── HERO ─── -->
+<header>
+  <p class="hero-label">Botomatex AI-Powered CRM</p>
+  <h1 class="hero-title">
+    Stop chasing leads.<br>
+    Start <em>closing</em> them.
+  </h1>
+  <p class="hero-sub">
+    Most small business owners spend more time managing spreadsheets and follow-up emails than actually running their business. Botomatex changes that — so you can do more with fewer hours and a leaner team.
+  </p>
+  <a href="#benefits" class="hero-cta">See the 3 big benefits ↓</a>
+  <div class="hero-stat">
+    <strong>10×</strong>
+    <span>faster lead closure</span>
+  </div>
+</header>
+
+<!-- ─── BENEFITS ─── -->
+<section class="benefits" id="benefits">
+  <p class="section-eyebrow">Why Botomatex Works</p>
+  <h2 class="section-title">Three ways it pays for itself — fast.</h2>
+
+  <div class="cards">
+
+    <!-- CARD 1 -->
+    <div class="card reveal">
+      <div class="card-num">01</div>
+      <div class="card-icon">⚡</div>
+      <h3 class="card-title">Close Deals 10× Faster — Without Hiring Anyone New</h3>
+      <p class="card-body">
+        Every hour a lead sits without a follow-up, it gets colder — and your competitor gets warmer. Botomatex automatically reaches out, nurtures, and nudges your leads at exactly the right moment, so deals that used to take weeks now close in days.
+        <br><br>
+        Think of it as a tireless sales assistant who never forgets to call back, never has a bad day, and works 24/7 — without a salary.
+      </p>
+      <div class="card-proof">
+        "I closed three deals last week that I would have let slip through the cracks before." — Small business owner, retail sector
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card reveal">
+      <div class="card-num">02</div>
+      <div class="card-icon">🕐</div>
+      <h3 class="card-title">Win Back 10+ Hours Every Single Week</h3>
+      <p class="card-body">
+        Between sending follow-up emails, updating contact records, scheduling callbacks, and sorting through your inbox — managing leads manually can eat half your workweek. Botomatex handles all of that in the background automatically.
+        <br><br>
+        That's 10+ hours a week returned to you. Use them to grow your business, serve your best customers — or simply leave on time.
+      </p>
+      <div class="card-proof">
+        "I used to spend Sunday nights catching up on CRM admin. Now I don't even think about it." — Freelance consultant
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card reveal">
+      <div class="card-num">03</div>
+      <div class="card-icon">💰</div>
+      <h3 class="card-title">Spend Less to Earn More — Every Month</h3>
+      <p class="card-body">
+        Missed leads are silent money-drains. When a hot prospect doesn't hear back within the hour, 78% of them move on to whoever responds first. Botomatex ensures that's always you — so you stop losing revenue you didn't even know you were losing.
+        <br><br>
+        No extra headcount. No costly marketing spend. Just more of the leads you're already getting, turning into paying customers.
+      </p>
+      <div class="card-proof">
+        "My conversion rate went up 40% in the first month — without spending a single extra dollar on ads." — Home services business owner
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CLOSER CTA ─── -->
+<section class="closer">
+  <div class="closer-left">
+    <h2>Your competitors are already using AI.<br><span>Will you keep up?</span></h2>
+    <p>Botomatex is built specifically for small business owners who want big-business results without big-business overhead. Set it up in under an hour. See results in your first week.</p>
+  </div>
+  <div class="closer-cta">
+    <a href="#">Start Free — No Credit Card Needed</a>
+  </div>
+</section>
+
+</div><!-- /page-home -->
+
+<!-- ─── BLOG PAGE ─── -->
+<div id="page-blog" class="page-hidden">
+  <section class="blog-section">
+    <p class="section-eyebrow">Botomatex Blog</p>
+    <h2 class="section-title">Insights for Smarter Selling</h2>
+    <div class="blog-filters" id="blogFilters"></div>
+    <div class="blog-grid" id="blogGrid"></div>
+  </section>
+</div>
+
+<!-- ─── BLOG DETAIL PAGE ─── -->
+<div id="page-blog-detail" class="page-hidden">
+  <div class="blog-detail" id="blogDetailContent"></div>
+</div>
+
+<footer>© 2026 Botomatex — AI-Powered CRM for Small Business</footer>
+
+<script>
+// ── BLOG DATA ──
+const blogPosts = [
+  {
+    id:'ai-task-queue-era-2026',
+    title:'The Chat Era is Dying: Welcome to the Age of Task Queues',
+    excerpt:'Yesterday, I spent 3 hours chatting with AI. Today, I queued 5 tasks and went for a walk. Here\'s the paradigm shift happening RIGHT NOW.',
+    category:'AI & Automation',
+    author:'Kamal Kishore',
+    authorRole:'Founder & CEO, DigiVibe',
+    date:'January 17, 2026',
+    readTime:'12 min read',
+    featured:true,
+    tags:['AI Agents','Claude Co-work','Task Queues','Marketing 2026'],
+    content:`## The Paradigm Shift Is Here\n\nYesterday, I spent 3 hours chatting with AI. Today, I queued 5 tasks and went for a walk.\n\n**What changed?**\n\nClaude Co-work just taught me the future of work: **I'm no longer the respondent. I'm the manager.**\n\n---\n\n## The Evolution: From Chat to Task Queues\n\n### 2023-2025: The Chat Era\n- **Synchronous**: \"What do I prompt next?\"\n- **Single-threaded**: One task at a time\n- **AI as Advisor**: Endless conversations, manual implementation\n\n### 2026+: The Task Queue Era\n- **Asynchronous**: \"What outcome do I need?\"\n- **Multi-threaded**: Multiple tasks running in parallel\n- **AI as Employee**: Define goal, approve plan, AI executes\n\n> **The key insight**: Reviewing a plan is higher-leverage work than editing bad prose.\n\n---\n\n## Claude Co-work: Built in 10 Days by AI\n\n**Anthropic built Claude Co-work in just 10 DAYS. Using their own AI (Claude Code) to build it.**\n\nUnlike traditional chat interfaces, Claude Co-work:\n- **Manages files** directly on your machine\n- **Drafts documents** without copy-paste\n- **Automates tasks** with persistent context\n- **Delivers real files**: Excel with formulas, actual PPT decks, working code\n\n---\n\n## The Uncomfortable Truth About Marketing in 2026\n\n> \"In 1996: If your work is good, people will automatically come to you. In 2026: That philosophy is dead and buried.\"\n\n| 1996 Marketing | 2026 Marketing |\n|---|---|\n| Word of mouth was king | Attention is the new currency |\n| Quality spoke for itself | Visibility before credibility |\n| Build first, promote later | Promote first, then prove |\n\n> \"Any business without a content creation department by 2030 will cease to exist.\" — Rajiv Talreja\n\n---\n\n## Your Action Plan for 2026\n\n**1. Pick Your Avatar**: EDUCATOR, ENTERTAINER, or STORYTELLER.\n\n**2. Prepare for AI Agents**: What workflows are ready to be handed to an AI agent?\n\n**3. Embrace Task Queue Thinking**: Stop thinking \"What prompt should I use?\" Start thinking \"What outcome do I need?\"`
+  },
+  {
+    id:'local-seo-guide-2026',
+    title:'The Ultimate Local SEO Guide for Tricity Businesses in 2026',
+    excerpt:'Learn how to dominate local search results in Mohali, Chandigarh, and Panchkula with our comprehensive local SEO strategies.',
+    category:'SEO',
+    author:'Kamal Kishore',
+    authorRole:'Founder & CEO, DigiVibe',
+    date:'January 15, 2026',
+    readTime:'8 min read',
+    featured:false,
+    tags:['Local SEO','Google My Business','Tricity','Mohali'],
+    content:`## Introduction to Local SEO in 2026\n\nLocal SEO has evolved dramatically. For businesses in the Tricity region, mastering these strategies is essential.\n\n---\n\n## Key Strategies\n\n### 1. Google Business Profile Optimization\nYour Google Business Profile is your most powerful local SEO asset. Ensure it's 100% complete with photos, posts, and Q&A.\n\n### 2. Local Citations & NAP Consistency\nYour Name, Address, and Phone number must be identical across every platform — Google, Justdial, Sulekha, IndiaMART.\n\n### 3. Review Management\nBusinesses with 50+ reviews and a 4.5+ rating dominate local packs. Build a systematic review collection process.\n\n### 4. Local Content Strategy\nCreate content that targets local keywords:\n- \"Best [service] in Mohali\"\n- \"[Industry] near Chandigarh\"\n- \"Top [product] Panchkula\"\n\n### 5. Mobile-First Indexing\n**73% of local searches** happen on mobile. Your site must load in under 3 seconds on 4G connections.\n\n---\n\n## Quick Wins You Can Do Today\n\n- Claim and verify your Google Business Profile\n- Add 10+ high-quality photos\n- Respond to every review within 24 hours\n- Add local schema markup to your website\n\n> **Pro tip**: Post on Google Business Profile weekly — it signals to Google that your business is active.`
+  },
+  {
+    id:'ai-marketing-automation',
+    title:'How AI is Revolutionizing Marketing Automation',
+    excerpt:'Discover how tools like BotomateX are changing the game for lead generation and customer engagement.',
+    category:'AI & Automation',
+    author:'Aman Gill',
+    authorRole:'CTO, DigiVibe',
+    date:'January 10, 2026',
+    readTime:'6 min read',
+    featured:false,
+    tags:['AI','Marketing Automation','BotomateX','Lead Gen'],
+    content:`## The AI Revolution in Marketing\n\nMarketing automation isn't new — but AI is making it 10x smarter.\n\n---\n\n## What's Changed\n\n### From Rule-Based to Intelligence-Based\nOld automation: \"If user opens email, wait 2 days, send follow-up.\"\nAI automation: \"Analyze user behavior, predict optimal timing, personalize message, choose best channel.\"\n\n### Key AI Capabilities\n- **Predictive Lead Scoring**: AI analyzes 50+ signals to rank leads\n- **Dynamic Content**: Personalize every touchpoint automatically\n- **Optimal Send Time**: AI learns when each contact is most responsive\n- **Conversation AI**: WhatsApp bots that feel human\n\n---\n\n## BotomateX: Built for Indian SMBs\n\nOur suite includes:\n- **LeadFlow**: Captures leads from every channel into one dashboard\n- **ChatterBot**: 24/7 WhatsApp automation\n- **VoiceAI**: Handles calls when you can't\n\n> \"I closed three deals last week that I would have let slip before.\" — Retail business owner`
+  },
+  {
+    id:'instagram-reels-strategy',
+    title:'Instagram Reels Strategy That Actually Works',
+    excerpt:'Our proven formula for creating viral reels that drive engagement and conversions for local businesses.',
+    category:'Social Media',
+    author:'Prabjot Singh',
+    authorRole:'Creative Lead, DigiVibe',
+    date:'January 5, 2026',
+    readTime:'5 min read',
+    featured:false,
+    tags:['Instagram','Reels','Social Media','Video Marketing'],
+    content:`## Why Reels Matter in 2026\n\nInstagram Reels get **2x more reach** than static posts. For local businesses, this is free advertising.\n\n---\n\n## The 3-Second Hook Formula\n\nYou have exactly 3 seconds to stop the scroll. Use one of these hooks:\n- **Pattern interrupt**: Start with something unexpected\n- **Bold claim**: \"This one trick doubled our client's leads\"\n- **Question**: \"Are you making this mistake?\"\n\n## Content Pillars for Local Businesses\n\n### 1. Behind the Scenes (30%)\nShow your process, team, workspace. People buy from people.\n\n### 2. Tips & Education (40%)\nShare quick, actionable tips related to your industry.\n\n### 3. Social Proof (20%)\nTestimonials, case studies, before/after transformations.\n\n### 4. Trending & Entertainment (10%)\nJump on trends — but always tie it back to your business.\n\n---\n\n## Posting Schedule\n\n| Day | Content Type |\n|---|---|\n| Mon | Educational tip |\n| Wed | Behind the scenes |\n| Fri | Testimonial/Case study |\n| Sun | Trending audio + business twist |\n\n> Post consistently for 90 days. The algorithm rewards consistency over virality.`
+  },
+  {
+    id:'google-ads-roi',
+    title:'Maximizing ROI with Google Ads: A Practical Guide',
+    excerpt:'Tips and strategies to get the most out of your PPC campaigns without breaking the bank.',
+    category:'PPC',
+    author:'Inderjeet',
+    authorRole:'Performance Marketing Lead, DigiVibe',
+    date:'December 28, 2025',
+    readTime:'7 min read',
+    featured:false,
+    tags:['Google Ads','PPC','ROI','Digital Advertising'],
+    content:`## Stop Wasting Money on Google Ads\n\nMost small businesses waste 40-60% of their Google Ads budget. Here's how to fix that.\n\n---\n\n## The 5 Biggest Mistakes\n\n### 1. Broad Match Keywords\nUsing broad match is like fishing with a net that has holes. Use phrase match and exact match for better targeting.\n\n### 2. No Negative Keywords\nAdd negative keywords weekly. This alone can save 20-30% of your budget.\n\n### 3. Sending Traffic to Your Homepage\nCreate dedicated landing pages for each ad group. Match the headline to the search intent.\n\n### 4. Ignoring Quality Score\nA Quality Score of 7+ reduces your cost per click by up to 50%. Focus on ad relevance and landing page experience.\n\n### 5. Not Tracking Conversions\nIf you're not tracking conversions, you're flying blind. Set up conversion tracking for calls, forms, and purchases.\n\n---\n\n## Quick ROI Wins\n\n- Enable call extensions (get leads directly)\n- Use ad scheduling (only show ads during business hours)\n- Add sitelink extensions (increase your ad real estate)\n- Test at least 3 ad variations per ad group\n\n> **Budget tip**: Start with ₹500/day and scale what works. Never scale what doesn't convert.`
+  },
+  {
+    id:'whatsapp-business-automation',
+    title:'WhatsApp Business Automation: Complete Setup Guide',
+    excerpt:'How to set up and optimize WhatsApp automation for your business with ChatterBot.',
+    category:'AI & Automation',
+    author:'Kamal Kishore',
+    authorRole:'Founder & CEO, DigiVibe',
+    date:'December 20, 2025',
+    readTime:'10 min read',
+    featured:false,
+    tags:['WhatsApp','Automation','ChatterBot','Customer Engagement'],
+    content:`## Why WhatsApp Automation in 2026\n\nWhatsApp has **500M+ users in India**. Your customers are already there — you just need to meet them.\n\n---\n\n## Setting Up ChatterBot\n\n### Step 1: Get WhatsApp Business API Access\nApply through an official BSP (Business Solution Provider). Approval takes 24-48 hours.\n\n### Step 2: Design Your Conversation Flows\nMap out the most common customer queries:\n- Product/service inquiries\n- Pricing questions\n- Appointment booking\n- Order status\n\n### Step 3: Create Message Templates\nWhatsApp requires pre-approved templates for outbound messages. Keep them conversational and valuable.\n\n### Step 4: Set Up Automated Responses\nConfigure instant replies for:\n- **Welcome messages**: Greet new contacts\n- **Away messages**: After business hours\n- **Quick replies**: Common FAQs\n\n---\n\n## Advanced Automation\n\n### Lead Qualification Bot\nAsk 3-4 qualifying questions automatically, then route hot leads to your sales team.\n\n### Appointment Booking\nLet customers book directly through WhatsApp. Sync with your calendar automatically.\n\n### Order Updates\nSend automated notifications for order confirmation, shipping, and delivery.\n\n> **Result**: Our clients see a **67% response rate** on WhatsApp vs 15% on email.`
+  }
+];
+
+// ── MARKDOWN CONVERTER ──
+function md(text) {
+  return text
+    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+    .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/gim, '<em>$1</em>')
+    .replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>')
+    .replace(/^- (.*$)/gim, '<li>$1</li>')
+    .replace(/`(.*?)`/gim, '<code>$1</code>')
+    .replace(/\|(.+)\|/gim, (m) => {
+      const cells = m.split('|').filter(c => c.trim());
+      if (cells.every(c => /^-+$/.test(c.trim()))) return '';
+      const tag = cells[0].includes('---') ? 'th' : 'td';
+      return '<tr>' + cells.map(c => '<'+tag+'>'+c.trim()+'</'+tag+'>').join('') + '</tr>';
+    })
+    .replace(/^---$/gim, '<hr>')
+    .replace(/\n\n/g, '</p><p>')
+    .replace(/\n/g, '<br>')
+    .replace(/(<li>.*<\/li>)/gim, '<ul>$1</ul>')
+    .replace(/<\/ul><ul>/g, '');
+}
+
+// ── RENDER BLOG GRID ──
+function renderBlogGrid(filter) {
+  const grid = document.getElementById('blogGrid');
+  const posts = filter === 'All' ? blogPosts : blogPosts.filter(p => p.category === filter);
+  grid.innerHTML = posts.map(p => `
+    <a class="blog-card" href="#" onclick="showBlogPost('${p.id}');return false">
+      <div class="blog-card-img">📝</div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-cat">${p.category}</span>
+          <span>${p.readTime}</span>
+        </div>
+        <h3>${p.title}</h3>
+        <p>${p.excerpt}</p>
+      </div>
+      <div class="blog-card-footer">
+        <span>✍ ${p.author}</span>
+        <span>📅 ${p.date}</span>
+      </div>
+    </a>
+  `).join('');
+}
+
+// ── RENDER BLOG FILTERS ──
+function renderFilters() {
+  const cats = ['All', ...new Set(blogPosts.map(p => p.category))];
+  const el = document.getElementById('blogFilters');
+  el.innerHTML = cats.map(c =>
+    `<button class="${c === 'All' ? 'active' : ''}" onclick="setFilter('${c}')">${c}</button>`
+  ).join('');
+}
+
+function setFilter(cat) {
+  document.querySelectorAll('.blog-filters button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderBlogGrid(cat);
+}
+
+// ── SHOW BLOG POST DETAIL ──
+function showBlogPost(id) {
+  const post = blogPosts.find(p => p.id === id);
+  if (!post) return;
+  document.title = post.title + ' | Botomatex Blog';
+  // Update meta for SEO
+  setMeta('description', post.excerpt);
+  setMeta('og:title', post.title + ' | Botomatex Blog');
+  setMeta('og:description', post.excerpt);
+  setMeta('og:type', 'article');
+  // Inject blog article structured data
+  let ldScript = document.getElementById('blog-ld');
+  if (!ldScript) { ldScript = document.createElement('script'); ldScript.type='application/ld+json'; ldScript.id='blog-ld'; document.head.appendChild(ldScript); }
+  ldScript.textContent = JSON.stringify({
+    '@context':'https://schema.org','@type':'BlogPosting',
+    headline:post.title, description:post.excerpt,
+    author:{'@type':'Person',name:post.author},
+    datePublished:post.date, keywords:post.tags.join(',')
+  });
+
+  const el = document.getElementById('blogDetailContent');
+  const related = blogPosts.filter(p => p.id !== id && p.category === post.category).slice(0,2);
+  el.innerHTML = `
+    <a class="blog-detail-back" href="#" onclick="showPage('blog');return false">← Back to Blog</a>
+    <span class="blog-detail-cat">${post.category}</span>
+    <h1>${post.title}</h1>
+    <div class="detail-meta">
+      <span>✍ ${post.author} · ${post.authorRole}</span>
+      <span>📅 ${post.date}</span>
+      <span>🕐 ${post.readTime}</span>
+    </div>
+    <div class="blog-detail-content">${md(post.content)}</div>
+    <div class="blog-detail-tags">${post.tags.map(t => '<span>'+t+'</span>').join('')}</div>
+    ${related.length ? '<hr style="margin:3rem 0 2rem"><h2 style="font-family:Syne;font-weight:800;margin-bottom:1.5rem">Related Articles</h2><div class="blog-grid" style="max-width:100%">' + related.map(r => `<a class="blog-card" href="#" onclick="showBlogPost('${r.id}');return false"><div class="blog-card-body"><span class="blog-card-cat">${r.category}</span><h3 style="margin-top:0.5rem">${r.title}</h3><p>${r.excerpt}</p></div></a>`).join('') + '</div>' : ''}
+  `;
+  showPage('blog-detail');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function setMeta(name, content) {
+  let el = document.querySelector('meta[name="'+name+'"]') || document.querySelector('meta[property="'+name+'"]');
+  if (el) el.setAttribute('content', content);
+}
+
+// ── PAGE ROUTING ──
+function showPage(page) {
+  ['home','blog','blog-detail'].forEach(p => {
+    document.getElementById('page-'+p).classList.toggle('page-hidden', p !== page);
+  });
+  // Update nav active states
+  document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
+    a.classList.toggle('active', a.dataset.page === page);
+  });
+  if (page === 'blog') {
+    document.title = 'Blog — Botomatex Insights';
+    setMeta('description', 'Insights on AI, SEO, social media and marketing automation for small businesses.');
+    renderFilters();
+    renderBlogGrid('All');
+  }
+  if (page === 'home') {
+    document.title = 'Botomatex — Close More. Work Less.';
+    setMeta('description', 'Botomatex AI-Powered CRM helps small businesses close deals 10x faster.');
+  }
+  if (page !== 'blog-detail') window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

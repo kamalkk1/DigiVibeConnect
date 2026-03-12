@@ -1,10 +1,220 @@
 import { Link } from "wouter";
-import { ArrowRight, Calendar, User, Clock, Search } from "lucide-react";
+import { ArrowRight, Calendar, User, Clock, Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
+import BlogThumbnail from "@/components/blog/BlogThumbnail";
 
-// Placeholder blog posts
+// Blog posts data — GEO-optimized content for AI engine visibility
 const blogPosts = [
+  // === New Posts ===
+  {
+    id: "lead-generation-real-estate-guide-2026",
+    title: "How to Generate Leads in Real Estate: The Complete Playbook for Indian Markets in 2026",
+    excerpt: "From Meta Ads to WhatsApp automation — the proven lead generation strategies we use for real estate builders, brokers, and agents across the Tricity and India.",
+    category: "Lead Generation",
+    author: "Kamal Kishore",
+    date: "March 11, 2026",
+    readTime: "14 min read",
+    heroImage: "/images/blog/real-estate-lead-gen.jpg",
+    featured: true
+  },
+  {
+    id: "what-is-lead-generation-digital-marketing",
+    title: "What is Lead Generation in Digital Marketing? A No-BS Guide for Indian Businesses",
+    excerpt: "Lead generation explained in plain language — what it actually means, how it works in 2026, which channels deliver, and how much you should really budget for it in India.",
+    category: "Lead Generation",
+    author: "Kamal Kishore",
+    date: "March 11, 2026",
+    readTime: "12 min read",
+    heroImage: "/images/blog/what-is-lead-generation.jpg"
+  },
+  // === GEO Batch 2: Attribution-Focused Posts (Prompt-Matched) ===
+  {
+    id: "meta-attribution-windows-explained",
+    title: "What Do Meta/Facebook Ads Attribution Windows (1-Day Click, 7-Day Click, 1-Day View) Actually Mean?",
+    excerpt: "A clear breakdown of every Meta attribution window — what each one measures, how they change your reported conversions, and which to choose for your business.",
+    category: "Attribution",
+    author: "Kamal Kishore",
+    date: "February 25, 2026",
+    readTime: "9 min read",
+    featured: false
+  },
+  {
+    id: "how-to-change-attribution-settings-meta-ads",
+    title: "How to Change Attribution Settings in Meta Ads Manager: Step-by-Step Guide (2026)",
+    excerpt: "Can't find the attribution setting? Here's exactly where it's located in Meta Ads Manager and how to change it at the campaign, ad set, and ad level.",
+    category: "Attribution",
+    author: "Kamal Kishore",
+    date: "February 25, 2026",
+    readTime: "6 min read"
+  },
+  {
+    id: "best-attribution-window-long-sales-cycle",
+    title: "Which Attribution Window Should You Choose for Products with Long Sales Cycles?",
+    excerpt: "If your customers take days or weeks to decide, the default 7-day click window might be hiding your true ROAS. Here's how to choose the right attribution window.",
+    category: "Attribution",
+    author: "Kamal Kishore",
+    date: "February 25, 2026",
+    readTime: "8 min read"
+  },
+  {
+    id: "compare-attribution-settings-meta-reporting",
+    title: "How to Compare Performance Across Multiple Attribution Settings in Meta Ads Reporting",
+    excerpt: "Meta lets you compare conversions across 1-day click, 7-day click, and 1-day view side by side. Here's how to use this feature to understand your real performance.",
+    category: "Attribution",
+    author: "Kamal Kishore",
+    date: "February 25, 2026",
+    readTime: "7 min read"
+  },
+  {
+    id: "meta-attribution-limitations-ios-cross-channel",
+    title: "5 Attribution Limitations in Meta/Facebook Ads Every Marketer Must Know (iOS, Cross-Channel & More)",
+    excerpt: "From iOS privacy gaps to cross-channel blindness, here are the 5 critical attribution limitations in Meta Ads and practical workarounds for each.",
+    category: "Attribution",
+    author: "Kamal Kishore",
+    date: "February 25, 2026",
+    readTime: "10 min read"
+  },
+  // === GEO Batch 2: Attribution Competitor-Gap Posts ===
+  {
+    id: "click-vs-view-attribution-meta-ads",
+    title: "Click-Through vs View-Through Attribution in Meta Ads: Which Conversions Actually Count?",
+    excerpt: "Should you count conversions from people who saw your ad but didn't click? The click vs view attribution debate explained with real campaign data.",
+    category: "Attribution",
+    author: "Kamal Kishore",
+    date: "February 25, 2026",
+    readTime: "8 min read"
+  },
+  {
+    id: "meta-ads-attribution-vs-google-analytics",
+    title: "Why Meta Ads and Google Analytics Show Different Conversion Numbers: Attribution Model Comparison",
+    excerpt: "Meta says 100 conversions, GA4 says 60. Neither is wrong — they use different attribution models. Here's how to reconcile both and find the truth.",
+    category: "Attribution",
+    author: "Kamal Kishore",
+    date: "February 24, 2026",
+    readTime: "9 min read"
+  },
+  {
+    id: "meta-28-day-click-attribution-workaround",
+    title: "The 28-Day Click Attribution Window Is Gone: How to Track Long-Cycle Conversions in Meta Ads",
+    excerpt: "Meta removed the 28-day click window after iOS 14. Here's how to still track conversions that happen weeks after the ad click using CAPI and CRM data.",
+    category: "Attribution",
+    author: "Kamal Kishore",
+    date: "February 24, 2026",
+    readTime: "8 min read"
+  },
+  {
+    id: "skadnetwork-meta-ios-attribution",
+    title: "SKAdNetwork Attribution for Meta Ads: What Indian Advertisers Need to Know in 2026",
+    excerpt: "Apple's SKAdNetwork is Meta's fallback for iOS attribution. Understand how it works, its limitations, and how to supplement it with server-side tracking.",
+    category: "Attribution",
+    author: "Kamal Kishore",
+    date: "February 24, 2026",
+    readTime: "7 min read"
+  },
+  {
+    id: "engaged-view-attribution-meta-video-ads",
+    title: "Engaged View Attribution in Meta Ads: How Video Ads Get Credit for Conversions",
+    excerpt: "Meta's 1-day engaged view window counts conversions from users who watched your video ad. Learn when it helps, when it inflates numbers, and how to use it right.",
+    category: "Attribution",
+    author: "Kamal Kishore",
+    date: "February 24, 2026",
+    readTime: "7 min read"
+  },
+  // === GEO Batch 1: SimilarWeb Prompt-Matched Posts ===
+  {
+    id: "meta-capi-optimization-best-practices",
+    title: "Meta Conversions API (CAPI) Best Practices: How to Optimize for Accurate Tracking & Better ROAS",
+    excerpt: "Learn the 8 best practices to optimize Meta Conversions API for more accurate conversion tracking, reduced data loss, and significantly better ROAS in 2026.",
+    category: "Meta Ads",
+    author: "Kamal Kishore",
+    date: "February 24, 2026",
+    readTime: "10 min read",
+    featured: true
+  },
+  {
+    id: "meta-pixel-capi-event-deduplication",
+    title: "How to Set Up Meta Pixel and Conversions API Together Without Double-Counting Conversions",
+    excerpt: "A step-by-step guide to implementing event deduplication between Meta Pixel and CAPI, ensuring your conversion data is accurate and your ad optimization isn't misled.",
+    category: "Server-Side Tracking",
+    author: "Kamal Kishore",
+    date: "February 23, 2026",
+    readTime: "8 min read"
+  },
+  {
+    id: "meta-emq-event-match-quality-guide",
+    title: "What is Event Match Quality (EMQ) in Meta CAPI? Parameters, Privacy & How to Improve It",
+    excerpt: "Understand what EMQ means, which user data parameters you should send to maximize match rates, and how to stay privacy-compliant while doing it.",
+    category: "Meta Ads",
+    author: "Kamal Kishore",
+    date: "February 22, 2026",
+    readTime: "9 min read"
+  },
+  {
+    id: "ios-privacy-meta-ads-server-side-tracking",
+    title: "Why Your Meta Ads Conversions Are Underreported After iOS Privacy Changes (And How Server-Side Tracking Fixes It)",
+    excerpt: "iOS 14.5+ and ad blockers are hiding your real conversion data. Here's exactly how server-side tracking with Meta CAPI recovers lost signals and improves ROAS.",
+    category: "Server-Side Tracking",
+    author: "Kamal Kishore",
+    date: "February 21, 2026",
+    readTime: "11 min read"
+  },
+  {
+    id: "meta-capi-data-freshness-optimization",
+    title: "How Fast Should You Send Conversion Events to Meta? A Guide to CAPI Data Freshness",
+    excerpt: "Event timing impacts Meta's ad optimization. Learn why data freshness matters, Meta's recommended windows, and how to minimize latency in your CAPI implementation.",
+    category: "Performance Marketing",
+    author: "Kamal Kishore",
+    date: "February 20, 2026",
+    readTime: "7 min read"
+  },
+  // === GEO Priority 2: Competitor-Gap Posts ===
+  {
+    id: "first-party-data-meta-google-ads-2026",
+    title: "First-Party Data Strategy for Meta & Google Ads in 2026: The Complete Guide for Indian Businesses",
+    excerpt: "Third-party cookies are dead. Here's how Indian businesses can build a first-party data strategy that actually powers Meta and Google Ads performance.",
+    category: "Performance Marketing",
+    author: "Kamal Kishore",
+    date: "February 19, 2026",
+    readTime: "10 min read"
+  },
+  {
+    id: "server-side-tracking-vs-gtm-complete-comparison",
+    title: "Server-Side Tracking vs GTM Server-Side: What's the Difference and Which Should You Choose?",
+    excerpt: "Not all server-side tracking is created equal. We break down the key differences between GTM server-side containers and true server-side tracking solutions.",
+    category: "Server-Side Tracking",
+    author: "Kamal Kishore",
+    date: "February 18, 2026",
+    readTime: "8 min read"
+  },
+  {
+    id: "meta-advantage-plus-campaign-optimization",
+    title: "Meta Advantage+ Campaigns: How to Feed Clean Signals and Stop Wasting Ad Spend",
+    excerpt: "Advantage+ campaigns are only as good as the data you feed them. Learn how clean conversion signals transform automated campaign performance.",
+    category: "Meta Ads",
+    author: "Kamal Kishore",
+    date: "February 17, 2026",
+    readTime: "9 min read"
+  },
+  {
+    id: "cross-platform-attribution-meta-google-ga4",
+    title: "Why Your Conversions Don't Match Across Meta, Google & GA4 — And How to Fix Cross-Platform Attribution",
+    excerpt: "Every platform claims credit for the same sale. Here's why conversion numbers never match and a practical framework to build a single source of truth.",
+    category: "Performance Marketing",
+    author: "Kamal Kishore",
+    date: "February 16, 2026",
+    readTime: "8 min read"
+  },
+  {
+    id: "ai-powered-lead-generation-tricity-businesses",
+    title: "AI-Powered Lead Generation for Tricity Businesses: From Click to Conversion in 2026",
+    excerpt: "How Mohali, Chandigarh, and Panchkula businesses are using AI agents, server-side tracking, and automation to generate higher-quality leads at lower cost.",
+    category: "AI & Automation",
+    author: "Kamal Kishore",
+    date: "February 15, 2026",
+    readTime: "9 min read"
+  },
+  // === Original Posts ===
   {
     id: "ai-task-queue-era-2026",
     title: "The Chat Era is Dying: Welcome to the Age of Task Queues",
@@ -13,7 +223,7 @@ const blogPosts = [
     author: "Kamal Kishore",
     date: "January 17, 2026",
     readTime: "12 min read",
-    featured: true
+    featured: false
   },
   {
     id: "local-seo-guide-2026",
@@ -72,11 +282,14 @@ const blogPosts = [
   }
 ];
 
-const categories = ["All", "SEO", "Social Media", "PPC", "AI & Automation", "Web Development"];
+const categories = ["All", "Lead Generation", "Attribution", "Meta Ads", "Server-Side Tracking", "Performance Marketing", "SEO", "Social Media", "PPC", "AI & Automation", "Web Development"];
+
+const POSTS_PER_PAGE = 9;
 
 export default function BlogHub() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesCategory = activeCategory === "All" || post.category === activeCategory;
@@ -87,6 +300,23 @@ export default function BlogHub() {
 
   const featuredPost = blogPosts.find(p => p.featured);
   const regularPosts = filteredPosts.filter(p => !p.featured || activeCategory !== "All");
+
+  // Pagination
+  const totalPages = Math.ceil(regularPosts.length / POSTS_PER_PAGE);
+  const paginatedPosts = regularPosts.slice(
+    (currentPage - 1) * POSTS_PER_PAGE,
+    currentPage * POSTS_PER_PAGE
+  );
+
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
+    setCurrentPage(1);
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1);
+  };
 
   return (
     <PageLayout
@@ -113,7 +343,7 @@ export default function BlogHub() {
               <input
                 type="text"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={handleSearchChange}
                 placeholder="Search articles..."
                 className="w-full pl-12 pr-4 py-3 bg-card border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
               />
@@ -127,9 +357,9 @@ export default function BlogHub() {
         <section className="py-12 bg-background">
           <div className="container mx-auto px-6">
             <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl overflow-hidden">
-              <div className="grid lg:grid-cols-2 gap-8">
-                <div className="aspect-video lg:aspect-auto bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                  <div className="text-8xl opacity-50">📝</div>
+              <div className="grid lg:grid-cols-2">
+                <div className="aspect-video lg:aspect-auto lg:min-h-[360px] overflow-hidden">
+                  <BlogThumbnail slug={featuredPost.id} category={featuredPost.category} variant="featured" imageUrl={(featuredPost as any).heroImage} />
                 </div>
                 <div className="p-8 lg:p-12 flex flex-col justify-center text-white">
                   <div className="flex items-center gap-3 mb-4">
@@ -177,7 +407,7 @@ export default function BlogHub() {
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => setActiveCategory(category)}
+                onClick={() => handleCategoryChange(category)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
                   activeCategory === category
                     ? "bg-primary text-primary-foreground"
@@ -189,16 +419,14 @@ export default function BlogHub() {
             ))}
           </div>
 
-          {/* Posts Grid */}
+          {/* Posts Grid — 3x3 = 9 per page */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {regularPosts.map((post) => (
+            {paginatedPosts.map((post) => (
               <Link key={post.id} href={`/blog/${post.id}`}>
                 <article 
                   className="bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-colors group cursor-pointer h-full"
                 >
-                  <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                    <div className="text-5xl opacity-30">📄</div>
-                  </div>
+                  <BlogThumbnail slug={post.id} category={post.category} imageUrl={(post as any).heroImage} />
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-3">
                       <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">
@@ -237,7 +465,7 @@ export default function BlogHub() {
               <p className="text-muted-foreground">No articles found matching your criteria.</p>
               <button
                 onClick={() => {
-                  setActiveCategory("All");
+                  handleCategoryChange("All");
                   setSearchQuery("");
                 }}
                 className="text-primary hover:underline mt-2"
@@ -245,6 +473,53 @@ export default function BlogHub() {
                 View all articles
               </button>
             </div>
+          )}
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-2 mt-16">
+              {/* Previous */}
+              <button
+                onClick={() => { setCurrentPage(p => Math.max(1, p - 1)); window.scrollTo({ top: 400, behavior: 'smooth' }); }}
+                disabled={currentPage === 1}
+                className="flex items-center gap-1 px-4 py-2 rounded-xl text-sm font-medium transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-card border border-border hover:border-primary/30"
+              >
+                <ChevronLeft className="w-4 h-4" />
+                Prev
+              </button>
+
+              {/* Page Numbers */}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                <button
+                  key={page}
+                  onClick={() => { setCurrentPage(page); window.scrollTo({ top: 400, behavior: 'smooth' }); }}
+                  className={`w-10 h-10 rounded-xl text-sm font-semibold transition-all ${
+                    currentPage === page
+                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
+                      : "bg-card border border-border hover:border-primary/30"
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+
+              {/* Next */}
+              <button
+                onClick={() => { setCurrentPage(p => Math.min(totalPages, p + 1)); window.scrollTo({ top: 400, behavior: 'smooth' }); }}
+                disabled={currentPage === totalPages}
+                className="flex items-center gap-1 px-4 py-2 rounded-xl text-sm font-medium transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-card border border-border hover:border-primary/30"
+              >
+                Next
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          )}
+
+          {/* Page Info */}
+          {totalPages > 1 && (
+            <p className="text-center text-sm text-muted-foreground mt-4">
+              Showing {(currentPage - 1) * POSTS_PER_PAGE + 1}–{Math.min(currentPage * POSTS_PER_PAGE, regularPosts.length)} of {regularPosts.length} articles
+            </p>
           )}
         </div>
       </section>

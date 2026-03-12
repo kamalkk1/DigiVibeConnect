@@ -5,56 +5,92 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(225, 27%, 98%);
-  --foreground: hsl(220, 23%, 11%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(220, 23%, 11%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(220, 23%, 11%);
-  --primary: hsl(0, 51%, 59%);
+  /* Existing Defaults - Kept for compatibility but overridden largely by new design */
+  --background: #08080f;
+  /* Overridden to match new bg-primary */
+  --foreground: #F8FAFC;
+  /* Overridden to match new text-primary */
+
+  /* New Design Tokens (Digivibe Landing Update) */
+  /* Colors - Premium Dark Theme */
+  --bg-primary: #08080f;
+  --bg-secondary: #0d0d1a;
+  --bg-card: #111127;
+  --bg-card-hover: #16163a;
+  --bg-elevated: #1a1a3e;
+
+  /* Brand - Violet/Purple */
+  --brand-primary: #7C3AED;
+  --brand-light: #A78BFA;
+  --brand-dark: #5B21B6;
+  --brand-glow: rgba(124, 58, 237, 0.3);
+  --brand-gradient: linear-gradient(135deg, #3a61ed, #5568f7, #5b48ec);
+  --brand-gradient-subtle: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(168, 85, 247, 0.08));
+
+  /* Accent Colors */
+  --accent-cyan: #06B6D4;
+  --accent-emerald: #10B981;
+  --accent-amber: #F59E0B;
+  --accent-rose: #F43F5E;
+  --accent-orange: #F97316;
+
+  /* Text */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-on-brand: #FFFFFF;
+
+  /* Borders */
+  --border-subtle: rgba(148, 163, 184, 0.08);
+  --border-medium: rgba(148, 163, 184, 0.15);
+  --border-brand: rgba(124, 58, 237, 0.3);
+
+  /* Spacing */
+  --section-py: clamp(4rem, 8vw, 7rem);
+  --container-max: 1200px;
+  --container-narrow: 800px;
+  --container-px: clamp(1.25rem, 4vw, 2rem);
+
+  /* Effects */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-glow: 0 0 40px rgba(124, 58, 237, 0.15);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Legacy Variables Mapped or Kept */
+  --card: hsl(228, 9%, 10%);
+  /* Mapped to near bg-secondary */
+  --card-foreground: hsl(225, 27%, 98%);
+  --popover: hsl(228, 9%, 10%);
+  --popover-foreground: hsl(225, 27%, 98%);
+  --primary: #3750cd;
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsla(48, 65%, 58%, 0.899);
+  --secondary: #0d0d1a;
   --secondary-foreground: hsl(0, 0%, 100%);
-  --muted: hsl(220, 15%, 96%);
-  --muted-foreground: hsl(220, 8%, 46%);
-  --accent: hsl(4, 90%, 69%);
+  --muted: hsl(220, 8%, 20%);
+  --muted-foreground: hsl(220, 15%, 70%);
+  --accent: #F43F5E;
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(220, 13%, 91%);
-  --input: hsl(220, 13%, 91%);
-  --ring: hsl(249, 58%, 69%);
+  --border: rgba(148, 163, 184, 0.15);
+  --input: rgba(148, 163, 184, 0.15);
+  --ring: #7C3AED;
   --radius: 0.75rem;
   --font-sans: 'Inter', sans-serif;
   --font-serif: ui-serif, Georgia;
   --font-mono: ui-monospace, SFMono-Regular;
-  --local-accent: hsl(35, 100%, 50%);
-  --digivibe-primary: hsl(249, 58%, 69%);
-  --digivibe-secondary: hsl(170, 64%, 39%);
-  --digivibe-accent: hsl(4, 90%, 69%);
-  --digivibe-local: hsl(35, 100%, 50%);
 }
 
 .dark {
-  --background: hsl(220, 23%, 11%);
-  --foreground: hsl(225, 27%, 98%);
-  --card: hsl(228, 9%, 10%);
-  --card-foreground: hsl(225, 27%, 98%);
-  --popover: hsl(228, 9%, 10%);
-  --popover-foreground: hsl(225, 27%, 98%);
-  --primary: hsl(249, 58%, 69%);
-  --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(170, 64%, 39%);
-  --secondary-foreground: hsl(0, 0%, 100%);
-  --muted: hsl(220, 8%, 20%);
-  --muted-foreground: hsl(220, 15%, 70%);
-  --accent: hsl(4, 90%, 69%);
-  --accent-foreground: hsl(0, 0%, 100%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(220, 13%, 20%);
-  --input: hsl(220, 13%, 20%);
-  --ring: hsl(249, 58%, 69%);
+  /* Keeping dark mode same as root for this dark-themed landing page */
+  --background: #08080f;
+  --foreground: #F8FAFC;
 }
 
 @layer base {
@@ -140,4 +176,170 @@
   50% {
     transform: translateY(-20px);
   }
+}
+
+/* ── Floating 3D Icon Animations ── */
+@keyframes float-1 {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-18px) rotate(3deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+
+  75% {
+    transform: translateY(-22px) rotate(1deg);
+  }
+}
+
+@keyframes float-2 {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-14px) rotate(-4deg);
+  }
+
+  66% {
+    transform: translateY(-24px) rotate(3deg);
+  }
+}
+
+@keyframes float-3 {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  40% {
+    transform: translateY(-20px) scale(1.05);
+  }
+
+  70% {
+    transform: translateY(-10px) scale(0.98);
+  }
+}
+
+@keyframes float-4 {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  20% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+
+  60% {
+    transform: translateY(-26px) rotate(-3deg);
+  }
+
+  80% {
+    transform: translateY(-16px) rotate(1deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slow-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(6px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(6px) rotate(-360deg);
+  }
+}
+
+@keyframes dash-flow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -60;
+  }
+}
+
+@keyframes dash-flow-reverse {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 60;
+  }
+}
+
+/* Utility classes for the floating icons */
+.animate-float-1 {
+  animation: float-1 7s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-2 8s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-3 6s ease-in-out infinite;
+}
+
+.animate-float-4 {
+  animation: float-4 9s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 25s linear infinite;
+}
+
+.animate-orbit {
+  animation: orbit 15s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-dash {
+  stroke-dasharray: 12 8;
+  animation: dash-flow 6s linear infinite;
+}
+
+.animate-dash-reverse {
+  stroke-dasharray: 12 8;
+  animation: dash-flow-reverse 8s linear infinite;
 }

@@ -7,7 +7,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-foreground text-background py-16">
+    <footer className="bg-[#08080f] text-slate-300 py-16 border-t border-slate-800">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand Column */}
@@ -17,7 +17,7 @@ export default function Footer() {
                 <img src={LOGO} alt="DigiVibe Logo" className="w-28 h-28" />
               </div>
             </Link>
-            <p className="text-background/80 mb-6 leading-relaxed max-w-sm">
+            <p className="text-slate-400 mb-6 leading-relaxed max-w-sm">
               {brandInfo.description}
             </p>
             <div className="flex space-x-4">
@@ -67,7 +67,7 @@ export default function Footer() {
               {footerLinks.services.map((link, idx) => (
                 <li key={idx}>
                   <Link href={link.href}>
-                    <span className="text-background/80 hover:text-primary transition-colors duration-200 cursor-pointer">
+                    <span className="text-slate-400 hover:text-primary transition-colors duration-200 cursor-pointer">
                       {link.label}
                     </span>
                   </Link>
@@ -93,7 +93,7 @@ export default function Footer() {
               {products.map((product) => (
                 <li key={product.id}>
                   <Link href={product.href}>
-                    <span className="text-background/80 hover:text-primary transition-colors duration-200 cursor-pointer flex items-center gap-2">
+                    <span className="text-slate-400 hover:text-primary transition-colors duration-200 cursor-pointer flex items-center gap-2">
                       <span>{product.icon}</span>
                       {product.name}
                     </span>
@@ -120,7 +120,7 @@ export default function Footer() {
               {footerLinks.company.map((link, idx) => (
                 <li key={idx}>
                   <Link href={link.href}>
-                    <span className="text-background/80 hover:text-secondary transition-colors duration-200 cursor-pointer">
+                    <span className="text-slate-400 hover:text-secondary transition-colors duration-200 cursor-pointer">
                       {link.label}
                     </span>
                   </Link>
@@ -128,21 +128,21 @@ export default function Footer() {
               ))}
               <li>
                 <Link href="/case-studies">
-                  <span className="text-background/80 hover:text-secondary transition-colors duration-200 cursor-pointer">
+                  <span className="text-slate-400 hover:text-secondary transition-colors duration-200 cursor-pointer">
                     Case Studies
                   </span>
                 </Link>
               </li>
               <li>
                 <Link href="/blog">
-                  <span className="text-background/80 hover:text-secondary transition-colors duration-200 cursor-pointer">
+                  <span className="text-slate-400 hover:text-secondary transition-colors duration-200 cursor-pointer">
                     Blog
                   </span>
                 </Link>
               </li>
               <li>
                 <Link href="/pricing">
-                  <span className="text-background/80 hover:text-secondary transition-colors duration-200 cursor-pointer">
+                  <span className="text-slate-400 hover:text-secondary transition-colors duration-200 cursor-pointer">
                     Pricing
                   </span>
                 </Link>
@@ -157,7 +157,7 @@ export default function Footer() {
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             {footerLinks.locations.map((link, idx) => (
               <Link key={idx} href={link.href}>
-                <span className="text-sm text-background/60 hover:text-primary transition-colors cursor-pointer">
+                <span className="text-sm text-slate-500 hover:text-primary transition-colors cursor-pointer">
                   {link.label}
                 </span>
               </Link>
@@ -168,17 +168,17 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-background/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-background/60 text-sm">
+            <p className="text-slate-500 text-sm">
               © {currentYear} {brandInfo.fullName}. All rights reserved.
             </p>
             <div className="flex items-center space-x-6">
               <Link href="/privacy">
-                <span className="text-background/60 hover:text-background transition-colors duration-200 text-sm cursor-pointer">
+                <span className="text-slate-500 hover:text-background transition-colors duration-200 text-sm cursor-pointer">
                   Privacy Policy
                 </span>
               </Link>
               <Link href="/terms">
-                <span className="text-background/60 hover:text-background transition-colors duration-200 text-sm cursor-pointer">
+                <span className="text-slate-500 hover:text-background transition-colors duration-200 text-sm cursor-pointer">
                   Terms of Service
                 </span>
               </Link>

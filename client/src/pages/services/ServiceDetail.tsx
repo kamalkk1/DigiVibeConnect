@@ -9,6 +9,7 @@ import {
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import { services, caseStudies } from "@/lib/siteData";
+import { generateServiceSchema, generateFAQSchema } from "@/lib/schema";
 
 export default function ServiceDetail() {
   const [, params] = useRoute("/services/:slug");
@@ -16,6 +17,16 @@ export default function ServiceDetail() {
   
   const service = services.find(s => s.id === slug);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  // Hero image mapping
+  const heroImages: Record<string, string> = {
+    "seo": "/images/services/seo-hero.png",
+    "web-design": "/images/services/web-design-hero.png",
+    "social-media": "/images/services/social-media-hero.png",
+    "ppc": "/images/services/ppc-hero.png",
+    "lead-generation": "/images/services/lead-generation-hero.png",
+    "analytics": "/images/services/analytics-hero.png",
+  };
 
   // If service not found, show 404-like message
   if (!service) {
@@ -38,21 +49,41 @@ export default function ServiceDetail() {
   const relatedCaseStudy = caseStudies.find(cs => 
     cs.services.some(s => s.toLowerCase().includes(service.shortTitle.toLowerCase()))
   );
+  const heroImage = heroImages[service.id];
 
   return (
     <PageLayout
       title={`${service.title} Services - DigiVibe Mohali`}
       description={service.fullDescription}
+      schema={[
+        generateServiceSchema(
+          service.title,
+          service.fullDescription,
+          `/services/${service.id}`
+        ),
+        generateFAQSchema(service.faqs)
+      ].filter(Boolean)}
     >
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary">
+        {/* Background Image */}
+        {heroImage && (
+          <div className="absolute inset-0">
+            <img 
+              src={heroImage} 
+              alt={`${service.title} hero`} 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 to-secondary/85">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)]" />
         </div>
         
         <div className="relative z-10 container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <div className="w-20 h-20 bg-white/20 rounded-3xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-6">
               <Icon className="w-10 h-10" />
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -64,7 +95,7 @@ export default function ServiceDetail() {
             
             <div className="flex flex-wrap justify-center gap-4 mb-10">
               {service.tags.map((tag, idx) => (
-                <span key={idx} className="px-4 py-2 bg-white/20 rounded-full text-sm">
+                <span key={idx} className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm">
                   {tag}
                 </span>
               ))}

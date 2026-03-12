@@ -1,85 +1,72 @@
-import { trackEvent } from "@/lib/analytics";
-import DigitalMArketing from "../../../attached_assets/Sequence.gif";
-import { ChartLine, Trophy } from "lucide-react";
-import Aurora from "./Aurora";
+
+import { Rocket, Eye, CheckCircle2, TrendingUp } from "lucide-react";
+import FloatingIcons from "./FloatingIcons";
 
 export default function Hero() {
-  const handleAuditClick = () => {
-    trackEvent("click", "hero", "audit_cta");
-  };
-
-  const handleCasesClick = () => {
-    trackEvent("click", "hero", "cases_cta");
-  };
-
   return (
-      <section className="relative pt-44 pb-20 overflow-hidden bg-background">
-      {/* 🌌 Aurora Background */}
-      {/* <div className="absolute inset-0 z-0">
-        <Aurora
-          colorStops={["", "#FF94B4", "#FF3232"]}
-          blend={1.5}
-          amplitude={1.0}
-          speed={0.5}
-        />
-      </div> */}
+    <section id="hero" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-[#08080f]">
+        {/* Background Effects */}
+        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-[20%] right-[-10%] w-[400px] h-[400px] bg-pink-600/10 rounded-full blur-[100px] pointer-events-none" />
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-left max-w-2xl mx-auto lg:mx-0">
-            <h1 className="font-poppins font-bold text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight">
-              <span className="gradient-text" data-testid="text-brand">
-                North India's Premier
-              </span>
-              <br />
-              <span data-testid="text-tagline-2" className="text-4xl">
-                Digital Growth Partner
-              </span>
-            </h1>
+        {/* Floating 3D Brand Icons & AI Shapes */}
+        <FloatingIcons />
 
-            <p
-              className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
-              data-testid="text-description"
-            >
-              Helping Mohali, Chandigarh & Tricity businesses grow with SEO,
-              social media, and performance-driven digital strategies.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <a
-                href="#contact"
-                onClick={handleAuditClick}
-                className="bg-primary text-primary-foreground px-8 py-4 rounded-xl text-nowrap font-semibold text-lg hover:opacity-90 transition-all duration-200 transform hover:scale-105"
-                data-testid="button-free-audit"
-              >
-                <ChartLine className="inline w-5 h-5 mr-2" />
-                Get Free Digital Audit
-              </a>
-
-              <a
-                href="#case-studies"
-                onClick={handleCasesClick}
-                className="bg-card text-card-foreground px-8 py-4 rounded-xl font-semibold text-lg hover:bg-muted transition-all duration-200 transform hover:scale-105 border border-border"
-                data-testid="button-success-stories"
-              >
-                <Trophy className="inline w-5 h-5 mr-2" />
-                See Success Stories
-              </a>
-            </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="flex justify-center lg:justify-end">
-            <img
-              src={DigitalMArketing}
-              alt="Hero Visual"
-              className="w-full max-w-md lg:max-w-lg rounded-xl shadow-xl"
-            />
-          </div>
+      <div className="container mx-auto px-4 text-center relative z-10">
+        
+        <div className="inline-flex items-center gap-2 py-1.5 px-4 bg-slate-800/50 border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium mb-8 animate-fade-in-up">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          For local businesses doing ₹2–10 Crore
         </div>
+
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-8 tracking-tight">
+          Your Competitors Are Using AI to Steal Your Customers.<br />
+          <span className="bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
+            You're Still Doing Everything Manually.
+          </span>
+        </h1>
+
+        <p className="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+          We deploy Voice AI, lead capture bots, and WhatsApp automation into your 
+          business — in days, not months. The same technology ₹500Cr companies use. 
+          Now it's yours.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+           <a 
+            href="#offer" 
+            className="group w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-purple-500/25 hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
+           >
+            <span>Get Your Free AI Pilot</span>
+            <Rocket className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+           </a>
+           <a 
+            href="#products" 
+            className="group w-full sm:w-auto px-8 py-4 bg-transparent border border-slate-700 hover:border-purple-500 text-slate-300 hover:text-white font-medium text-lg rounded-xl transition-all hover:bg-white/5 flex items-center justify-center gap-2"
+           >
+            <span>See What We Deploy</span>
+            <Eye className="w-5 h-5 group-hover:scale-110 transition-transform" />
+           </a>
+        </div>
+
+        {/* Proof Points */}
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-slate-500 text-sm font-medium">
+            <span className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500" /> Live in 7 days
+            </span>
+            <span className="flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-emerald-500" /> Already deployed for real estate businesses
+            </span>
+            <span className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500" /> No long-term contracts
+            </span>
+        </div>
+
       </div>
     </section>
   );
 }
+

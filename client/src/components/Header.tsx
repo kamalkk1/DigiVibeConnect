@@ -53,7 +53,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-gradient-to-br from-primary to-secondary shadow-lg">
+    <header className="relative w-full z-[60] bg-[#08080f]/80 backdrop-blur-xl border-b border-white/5 shadow-sm transition-all duration-300">
       <div className="container mx-auto px-6 py-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -61,7 +61,7 @@ export default function Header() {
             <div className="font-montserrat font-bold text-2xl text-black flex items-center cursor-pointer hover:opacity-90 transition-opacity">
               <img src={LOGO} alt="DigiVibe Logo" className="w-20 h-16" />
               <div className="flex">
-                <span className="text-white">DiGi</span>VIBE
+                <span className="text-white">DiGi</span><span className="text-white">VIBE</span>
               </div>
             </div>
           </Link>
